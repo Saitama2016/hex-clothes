@@ -2,4 +2,11 @@ language: node_js
 node_js: node
 cache:
   directories:
-    - node_modules
+  - node_modules
+deploy:
+  provider: heroku
+  api_key:
+    secure: N3ewT3GOBl2oHQvulOh8m/mlQ2fw4twoIv+NgOYMEpdUD+ot7a4yvfq2p6i7z9Ro8/vlTpTkf+FLSQRw2CVDflVragGDtFzaDeDVc2+MCzZ23klBEO1ZRkbvW5q6mHN+2YHPflGtkWeLUB3fIdqZ5gObxNPo/MyhvRj5tPMuymGPs0PN31XkbJ8F1BiSz3h6zuI3F0MzF61ZzoGCdw2MfDAvKIsMElituDaYWKBX0SVZHimfR2v+LucvEUAchuRzRZFJiEtxoUgB5RR+fbalxJn5FbDO8wV3nW8NEivbmzoMGZdBgKHwQNwZaKdDaSIncGf1e6Af50pnbjPT+/CVfKVD8q5yEpa6ih2Xvn3tIMiByHC/sEkLmz2gNAg7bDirnSUtRv0fuaxWYij4nwyTJ1BA/KMxFkiRZljwogWt++XunA8Oox0QIPXgngcFc/OIfPATDUqOoYhpWMXimZkXDiDWGvd+akeKhcOxIlkQcDnJ1PDVE/DdY/LsITec2ZjKTZOeC18v1gu0Ab6gH7yI9e9bM9NSLvEuzkMIuzccvCUcc4U60ysvomALZCMHFFRpYVeda8EMV16pZq+0Lmyi5mAS+3xj/To9ZG2E/CHiTRLLnQQox1F4B2yQIOmTZHhDQleq2uqdiJVX+7ZPsulpIRjahGyeUIB/i3/N1KBu+r4=
+  app: hex-clothes
+  on:
+    repo: Saitama2016/hex-clothes
