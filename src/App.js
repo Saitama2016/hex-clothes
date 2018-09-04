@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import { TopNav } from './topNav';
 import './App.css';
 
 class App extends Component {
@@ -7,12 +7,29 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
+          <h1 className="App-logo">HexClothes</h1>
+          <h2 className="App-title">Make an outfit that complements you!</h2>
+          <TopNav />
         </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+          <h3 className="App-intro">About</h3>
+
+          <section className="row aboutGrid">
+            <div className="col-4">
+              <div className="step">
+                <p>Step 1</p>
+              </div>
+            </div>
+            <div className="col-4">
+              <div className="step">
+                <p>Step 2</p>
+              </div>
+            </div>
+            <div className="col-4">
+              <div className="step">
+                <p>Step 3</p>
+              </div>
+            </div>
+          </section>
       </div>
     );
   }
