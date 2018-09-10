@@ -1,26 +1,53 @@
+* {
+  box-sizing: border-box;
+}
+
 .App {
   text-align: center;
 }
 
 .App-logo {
+  font-size: 2.5em;
   animation: App-logo-color infinite 7s linear;
-  height: 50px;
+  font-family: 'Oswald', sans-serif;
+  height: 20px;
 }
 
 .App-header {
+  line-height: 1.2em;
   background-color: #222;
-  height: 150px;
   padding: 20px;
   color: white;
   margin: 0 auto;
 }
 
 .App-title {
-  font-size: 1.5em;
+  font-size: 1.3em;
+  font-family: 'Roboto Slab', serif;
+}
+
+nav {
+  font-family: 'Roboto Slab', serif;
 }
 
 .App-intro {
   font-size: large;
+  font-family: 'Roboto Slab', serif;
+}
+
+main {
+  font-family: 'Roboto Slab', serif;
+}
+
+.fa-bars {
+  display: none;
+}
+
+a {
+  font-size: 1.2em;
+  text-decoration-line: none;
+  font-weight: 700;
+  color: hsl(210, 100%, 70%);
 }
 
 @keyframes App-logo-color {
@@ -37,4 +64,97 @@ ul {
 li {
   display: inline;
   padding: 5px;
+}
+
+section {
+  min-height: 300px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 30px 15px;
+}
+
+section:nth-child(even) {
+  background-color: gainsboro;
+}
+
+.step {
+  text-decoration-line: underline;
+  font-weight: 600;
+}
+
+.seasons {
+  display: inline-block;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.seasons::before,
+.seasons::after {
+  display: table;
+  content: '';
+}
+
+.seasons::after {
+  clear: both;
+}
+
+.col-6 {
+  float: left;
+  padding-left: 1.04166666%;
+  padding-right: 1.04166666%;
+  padding-bottom: 1.04166666%;
+  padding-top: 1.04166666%;
+}
+
+.col-6 {
+  width: 100%;
+}
+
+.lightSkintones, .darkSkintones {
+  width: 300px;
+}
+
+.lightSkintones {
+  transform: rotate(180deg);
+}
+
+.modernClothes {
+  margin-top: 1.2em;
+  width: 500px;
+}
+
+@media only screen and (min-width: 640px) {
+  .col-6 {
+    width: 50%;
+  }
+}
+
+img {
+  width: 200px;
+  height: 100px;
+}
+
+@media (max-width: 500px) {
+  .App-logo {
+    font-size: 2em;
+  }
+
+  ul {
+    display: none;
+  }
+
+  .fa-bars {
+    display: inline;
+    color: white;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding-top: 16px;
+    padding-left: 16px;
+    font-size: 1.5em;
+  }
+
+  .modernClothes {
+    width: 250px;
+  }
 }
