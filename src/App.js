@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { TopNav } from './topNav';
+import { SideNav } from './sideNav';
 import './App.css';
 
 class App extends Component {
@@ -7,9 +8,10 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <i className="fas fa-bars"></i>
+          <i onClick={() => document.getElementById("mySidenav").style.width = "250px"} className="fas fa-bars"></i>
           <h1 className="App-logo">HexClothes</h1>
           <h2 className="App-title">Make outfits that complement you!</h2>
+          <SideNav />
           <TopNav />
         </header>
         <main>

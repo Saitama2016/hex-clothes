@@ -1,0 +1,38 @@
+
+@media (min-width: 501px) {
+    nav#mySidenav.sideNav {
+        display: none;
+    }
+}
+
+
+@media (max-width: 500px) {
+.sideNav {
+    height: 100%;
+    width: 0px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 20px;
+}
+
+.sideNav a {
+    padding: 12px 12px 12px 32px;
+    text-decoration: none;
+    font-size: 1.3em;
+    display: block;
+    transition: 0.3s;
+}
+
+.sideNav .closebtn {
+    top: 0;
+    right: 25px;
+    font-size: 1.2em;
+    margin-left: 125px;
+    padding-top: 15px;
+}
+}
