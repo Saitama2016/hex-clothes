@@ -8,7 +8,7 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <i onClick={() => document.getElementById("mySidenav").style.width = "250px"} className="fas fa-bars"></i>
+          <i onClick={() => document.getElementById("mySidenav").style.width = "500px"} className="fas fa-bars"></i>
           <h1 className="App-logo">HexClothes</h1>
           <h2 className="App-title">Make outfits that complement you!</h2>
           <SideNav />
@@ -49,7 +49,7 @@ class App extends Component {
           </section>
           <section>
             <div className="step">
-              <p>Step 3: Create your outfits using our recommended complementary colors!</p>
+              <p>Step 3: Create your outfits using our recommended complimentary colors!</p>
               <img className="modernClothes" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYr8px-MHe9V1XrnO4rWuf5ZIkrsTXjN9b2jEH7TOybnQ30_au" alt="stack of modern clothes" />
             </div>
           </section>
