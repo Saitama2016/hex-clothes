@@ -5,8 +5,6 @@ cache:
   - node_modules
 deploy:
   provider: heroku
-  api_key:
-    secure: F+hT1xQ7HumvabRCkhjw3c6QkpTT4kktuoJWN163Rm30p+xhCUvi+NeArH94TU//dhiKyIZqJaL4H/fQyfR6Z84dth7drd7skzA92lHfC7lODIEXdr/HFYtR97153gQ1Gug0eFk1dAasZ1zDiWJTHcZZ2CDkmT3HbqV1hXP8j5dhyYjOTL9LwVq+D8VrI9BJLwTWjDCirrb/7p21c9zhuEE97drZhTXdj25ddYHcuCLev2m5/O5rC39dx7XTzVq3Z31aUKodxaJr16l71sNj2dGJrUlOvRZcc7gBIn4ihl/nJ00rFx3jYdjLnbbvOV1V0mi+Hz/ynIs9M4TtxYQMz6F828kb7iJyJyNoRSAL+YILdxJ5Oma15jS0gYhiZdDxXYmC+1hphkKvepthioF0AJNr5aDNeEf/WR4lsQbs+cNNGBqKf1mkWU2map2mZAe1GreE0qTIAzrM5RLzSTkKrz0Wz7CFERlyKQ6jRdhW5b1fpFBuSaXwLyL9yzYca2CyQMF4ZB4OgH1ITx+F0gIqPlNMRt2Ik4xGB25hJQOY4UZ1T/5yck9K7fcLx97DqKKqo3l0A23Ci09rdoGCCp6RwJxQl4wswzsiSnPAmn63u+0/2+JMHmiLueZ0GhBon0AeXgrvGqsK9FicgTZsZ+y0EOz3I3NAApu8yTLvgHd43IQ=
   app: hex-clothes
   on:
     repo: Saitama2016/hex-clothes
