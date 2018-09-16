@@ -5,7 +5,7 @@ import './sideNav.css';
 export function SideNav () {
 
     return (
-    <nav role="navigation" id="mySidenav" className="sideNav"> 
+    <nav id="mySidenav" className="sideNav"> 
         <a href="javascript:void(0)" className="closebtn" onClick={() => 
             document.getElementById("mySidenav").style.width = "0"}><i className="far fa-window-close fa-2x"></i></a>
         <a href="index.html">Demo</a>

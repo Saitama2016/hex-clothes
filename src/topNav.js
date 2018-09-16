@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 
 export function TopNav() {
     return (
-        <nav role="navigation" className="topNav">
+        <nav className="topNav">
             <ul>
                 <li><a href="index.html">Demo</a></li>
                 <li><a href="about.html">About</a></li>
