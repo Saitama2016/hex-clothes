@@ -1,11 +1,15 @@
 import React, { Component } from 'react';
 import { TopNav } from './topNav';
 import { SideNav } from './sideNav';
+import { BrowserRouter as Router, Route, Link, Redirect, withRouter } from 'react-router-dom';
+
 import './App.css';
+import Seasons from './components/seasons/seasons';
 
 class App extends Component {
   render() {
     return (
+      <Router>
       <div className="App">
         <header className="App-header">
           <i onClick={() => document.getElementById("mySidenav").style.width = "500px"} className="fas fa-bars"></i>
@@ -15,6 +19,7 @@ class App extends Component {
           <TopNav />
         </header>
         <main>
+          <Route path="/seasons" component={Seasons}></Route>
           <h3 className="App-intro">How to use HexClothes!</h3>
           <section>
             <div className="step">
@@ -55,6 +60,7 @@ class App extends Component {
           </section>
           </main>
       </div>
+      </Router>
     );
   }
 }

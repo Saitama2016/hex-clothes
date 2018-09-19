@@ -1,1 +1,1 @@
-${null} 
+import React from 'react';
