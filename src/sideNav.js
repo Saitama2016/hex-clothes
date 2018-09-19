@@ -8,13 +8,13 @@ export function SideNav () {
     <nav id="mySidenav" className="sideNav"> 
         <a href="javascript:void(0)" className="closebtn" onClick={() => 
             document.getElementById("mySidenav").style.width = "0"}><i className="far fa-window-close fa-2x"></i></a>
-        <a href="index.html">Demo</a>
-        <a href="about.html">About</a>
-        <a href="seasons.html">Seasons</a>
-        <a href="skintones.html">Select Skintones</a>
-        <a href="wardrobe.html">Wardrobe</a>
-        <a href="newOutfit.html">Login</a>
-        <a href="newOutfit.html">Sign Up</a>
+        <a href="seasons">Demo</a>
+        <a href="about">About</a>
+        <a href="seasons">Seasons</a>
+        <a href="skintones">Select Skintones</a>
+        <a href="wardrobe">Wardrobe</a>
+        <a href="login">Login</a>
+        <a href="signup">Sign Up</a>
     </nav>
     );
 }
