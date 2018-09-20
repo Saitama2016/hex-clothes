@@ -6,6 +6,11 @@ import { BrowserRouter as Router, Route, Link, Redirect, withRouter } from 'reac
 import './App.css';
 import Seasons from './seasons/seasons';
 import { About } from './landingPage/about';
+import Login from './session/loginForm';
+import signUp from './session/registerForm';
+import Avatar from './avatarLog/avatar';
+import { Wardrobe } from './wardrobe/wardrobe';
+
 
 class App extends Component {
   render() {
@@ -21,8 +26,12 @@ class App extends Component {
         </header>
         <main>
           <Route exact path="/" component={About}></Route>
-          <Route path="/seasons" component={Seasons}></Route>
           <Route path="/about" component={About}></Route>
+          <Route path="/seasons" component={Seasons}></Route>
+          <Route path="/avatar" component={Avatar}></Route>
+          <Route path="/wardrobe" component={Wardrobe}></Route>
+          <Route path="/login" component={Login}></Route>
+          <Route path="/signup" component={signUp}></Route>
         </main>
       </div>
       </Router>

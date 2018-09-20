@@ -11,7 +11,7 @@ export function SideNav () {
         <a href="seasons">Demo</a>
         <a href="about">About</a>
         <a href="seasons">Seasons</a>
-        <a href="skintones">Select Skintones</a>
+        <a href="avatar">Select Skintones</a>
         <a href="wardrobe">Wardrobe</a>
         <a href="login">Login</a>
         <a href="signup">Sign Up</a>
