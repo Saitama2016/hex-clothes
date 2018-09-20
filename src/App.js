@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import { TopNav } from './topNav';
-import { SideNav } from './sideNav';
+import { TopNav } from './landingPage/topNav';
+import { SideNav } from './landingPage/sideNav';
 import { BrowserRouter as Router, Route, Link, Redirect, withRouter } from 'react-router-dom';
 
 import './App.css';
-import Seasons from './components/seasons/seasons';
-import { About } from './components/landingPage/about';
+import Seasons from './seasons/seasons';
+import { About } from './landingPage/about';
 
 class App extends Component {
   render() {
