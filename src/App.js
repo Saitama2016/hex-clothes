@@ -4,7 +4,6 @@ import { SideNav } from './landingPage/sideNav';
 import { BrowserRouter as Router, Route, Link, Redirect, withRouter } from 'react-router-dom';
 
 import './App.css';
-import Seasons from './seasons/seasons';
 import { About } from './landingPage/about';
 import Login from './session/loginForm';
 import signUp from './session/registerForm';
@@ -27,7 +26,6 @@ class App extends Component {
         <main>
           <Route exact path="/" component={About}></Route>
           <Route path="/about" component={About}></Route>
-          <Route path="/seasons" component={Seasons}></Route>
           <Route path="/avatar" component={Avatar}></Route>
           <Route path="/wardrobe" component={Wardrobe}></Route>
           <Route path="/login" component={Login}></Route>

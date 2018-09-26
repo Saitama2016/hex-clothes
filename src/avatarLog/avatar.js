@@ -26,7 +26,7 @@ export default function Avatar() {
                     <option value="" style={{background: "#FFDBAC"}}>Navajo White</option>
                 </select></label>
                 <br />
-                <div><i className="fas fa-user fa-4x"></i></div>
+                <div><i className="fas fa-user fa-4x" style={{color: "#000"}}></i></div>
             </form>
         </div>
     );
