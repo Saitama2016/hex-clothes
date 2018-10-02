@@ -1,25 +1,44 @@
 import React from 'react';
 import './wardrobe.css';
 
-export function Wardrobe() {
+class Wardrobe extends React.Component {
+
+    hidePerson(event) {
+        this.refs.person.style.visibilty = "hidden";
+    }
+
+    render() {
     return (
         <div>
             <h3>Create your Outfit</h3>
             <section>
                 <div className="user">
-                    <div className="person">
-                        <div className="hat"></div>
+                    {/* Have body parts be same skin color */}
+                    <div className="person" id="person">
                         <div className="head"></div>
                         <div className="body">
-                            <div className="top"></div>
-                            <div className="bow"></div>
-                            <div className="left-side"></div>
-                            <div className="right-side"></div>
-                            <div className="shirt"></div>
+                          <div className="top"></div>
+                          <div className="collar"></div>
+                          <div className="left-arm">
+                            <div className="left-hand"></div>
+                          </div>
+                          <div className="right-arm">
+                            <div className="right-hand"></div>
+                          </div>
+                          <div className="shirt">
+                            <div className="buttons">
+                              <div className="button"></div>
+                              <div className="button"></div>
+                              <div className="button"></div>
+                            </div>
+                            <div className="left-short-sleeve"></div>
+                            <div className="right-short-sleeve"></div>
+                          </div>
                         </div>
+                        <div className="waist"></div>
                         <div className="legs">
-                            <div className="left-leg"></div>
-                            <div className="right-leg"></div>
+                          <div className="leg left"></div>
+                          <div className="leg right"></div>
                         </div>
                         <div className="feet"></div>
                     </div>
@@ -32,4 +51,6 @@ export function Wardrobe() {
             </section>
         </div>
     );
+    }
 }
+export default Wardrobe;

@@ -8,10 +8,13 @@ import { About } from './landingPage/about';
 import Login from './session/loginForm';
 import signUp from './session/registerForm';
 import Avatar from './avatarLog/avatar';
-import { Wardrobe } from './wardrobe/wardrobe';
+import Wardrobe from './wardrobe/wardrobe';
 
 
 class App extends Component {
+
+  // showSideNav() {}
+
   render() {
     return (
       <Router>
