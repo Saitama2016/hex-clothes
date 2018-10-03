@@ -1,11 +1,8 @@
 import React from 'react';
+import PickClothes from './pickClothes';
 import './wardrobe.css';
 
 class Wardrobe extends React.Component {
-
-    hidePerson(event) {
-        this.refs.person.style.visibilty = "hidden";
-    }
 
     render() {
     return (
@@ -31,7 +28,7 @@ class Wardrobe extends React.Component {
                               <div className="button"></div>
                               <div className="button"></div>
                             </div>
-                            <div className="left-short-sleeve"></div>
+                            <div className="left-short-sleeve" ref="left-short-sleeve"></div>
                             <div className="right-short-sleeve"></div>
                           </div>
                         </div>
@@ -43,6 +40,8 @@ class Wardrobe extends React.Component {
                         <div className="feet"></div>
                     </div>
                 </div>
+                <br />
+            <PickClothes />
             </section>
             <h3>Checkout your previous Outfits</h3>
             <section>

@@ -8,12 +8,12 @@
 
 .person {
     --skin-color: #C68642;
-    --clothes-color: #14c0e5;
-    --pants-color: purple;
+    --clothes-color: white;
+    --pants-color: #1560BD;
     padding: 20px;
     width: 100%;
     height: 100%;
-    background-color: #3567aa;
+    background-color: rgba(0, 0, 0, 0.5);
     box-sizing: border-box;
 }
   

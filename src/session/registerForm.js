@@ -7,10 +7,10 @@ export default function signUp() {
             <form className="signUpForm">
                 <fieldset>
                     <label>Username: </label>
-                    <input type="text" pattern=".{1,}" required title="1 characters minimum" required/>
+                    <input type="text" pattern=".{1,}" title="1 characters minimum" required/>
                     <br />
                     <label>Password: </label>
-                    <input type="password" pattern=".{10, 72}" required title="10 characters minimum" required/>
+                    <input type="password" pattern=".{10, 72}" title="10 characters minimum" required/>
                     <br />
                     <label>First Name:</label>
                     <input type="text" required/>
