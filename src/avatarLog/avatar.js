@@ -21,6 +21,8 @@ class Avatar extends React.Component {
     return (
         <div>
             <h3>Select Your Skintone!</h3>
+            <div><i id="user" ref="user" className="fas fa-user fa-4x"></i></div>
+            <br />
             <form>
                 <label>
                     <select value={this.state.skintone}  onChange={this.handleChange}>
@@ -42,8 +44,6 @@ class Avatar extends React.Component {
                         <option value="#FFDBAC" style={{background: "#FFDBAC"}}>Navajo White</option>
                     </select>
                 </label>
-                <br />
-                <div><i id="user" ref="user" className="fas fa-user fa-4x"></i></div>
             </form>
         </div>
     );

@@ -13,7 +13,7 @@
     padding: 20px;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: antiquewhite;
     box-sizing: border-box;
 }
   
@@ -91,7 +91,7 @@
   transform: rotate(160deg);
   border-radius: 15%;
   top: 1px;
-  right: -12.5px;
+  right: -13px;
 }
 .left-hand {
   width: 20px;
@@ -151,7 +151,7 @@
   z-index: 1;
   background-color: var(--pants-color);
 }
-.leg:after {
+.shoe {
   content: "";
   position: absolute;
   z-index:0;
@@ -164,4 +164,11 @@
 }
 .leg.right {
   float: right; 
+}
+
+select {
+  margin: 0 auto;
+  margin-top: 20px;
+  display: block;
+  font-size: 1em;
 }
