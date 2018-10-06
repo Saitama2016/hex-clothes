@@ -5,7 +5,7 @@ export function TopNav() {
     return (
         <nav className="topNav">
             <ul>
-                <li><a href="avatar">Demo</a></li>
+                <li><a href="wardrobe">Demo</a></li>
                 <li><a href="about">About</a></li>
                 <li><a href="avatar">Select Skintones</a></li>
                 <li><a href="wardrobe">Wardrobe</a></li>

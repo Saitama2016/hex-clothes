@@ -27,13 +27,13 @@
   z-index: 100;
 }
 
-.head::after {
+.neck {
   content: "";
   position: absolute;
   width: 25px;
   height: 30px;
   background-color: var(--skin-color);
-  margin-left: -12px;
+  margin-left: 12px;
   margin-top: 30px;
   z-index: 1;
 }
