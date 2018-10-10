@@ -39,7 +39,7 @@ class Wardrobe extends React.Component {
         console.log(this.refs);
         // console.log(this.refs.head.style.color);
         Object.keys(this.refs).filter(function(r) { 
-           return /(head|neck|arm|hand)/i.test(r)
+           return /(head|neck|arm|hand|foot)/i.test(r)
         }).forEach( function(ref) {
             this.refs[ref].style.backgroundColor = event.target.value;
         }.bind(this));
@@ -50,10 +50,21 @@ class Wardrobe extends React.Component {
         if (event.target.value === "tank-top") {
             this.refs.leftShortSleeve.style.visibility = "hidden";
             this.refs.rightShortSleeve.style.visibility = "hidden";
+            this.refs.leftLongSleeve.style.visibility = "hidden";
+            this.refs.rightLongSleeve.style.visibility = "hidden";
+
         }
-        if (event.target.value === "t-shirt") {
+        else if (event.target.value === "t-shirt") {
             this.refs.leftShortSleeve.style.visibility = "visible";
             this.refs.rightShortSleeve.style.visibility = "visible";
+            this.refs.leftLongSleeve.style.visibility = "hidden";
+            this.refs.rightLongSleeve.style.visibility = "hidden";
+        }
+        else if (event.target.value === "button-shirt") {
+            this.refs.leftShortSleeve.style.visibility = "hidden";
+            this.refs.rightShortSleeve.style.visibility = "hidden";
+            this.refs.leftLongSleeve.style.visibility = "visible";
+            this.refs.rightLongSleeve.style.visibility = "visible";
         }
     }
 
@@ -83,12 +94,12 @@ class Wardrobe extends React.Component {
         this.setState({ shoe: event.target.value });
         if (event.target.value === "no-shoes") {
             console.log(this.refs.head.style.backgroundColor);
-            this.refs.Lshoe.style.backgroundColor = "#C68642";
-            this.refs.Rshoe.style.backgroundColor = "#C68642";
+            this.refs.Lshoe.style.visibility = "hidden";
+            this.refs.Rshoe.style.visibility = "hidden";
         }
         if (event.target.value === "shoes") {
-            this.refs.Lshoe.style.backgroundColor = "black";
-            this.refs.Rshoe.style.backgroundColor = "black";
+            this.refs.Lshoe.style.visibility = "visible";
+            this.refs.Rshoe.style.visibility = "visible";
         }
     }
 
@@ -119,15 +130,19 @@ class Wardrobe extends React.Component {
                               <div className="button"></div>
                             </div>
                             <div className="left-short-sleeve" ref="leftShortSleeve"></div>
+                            <div className="left-long-sleeve" ref="leftLongSleeve"></div>
+                            <div className="right-long-sleeve" ref="rightLongSleeve"></div>
                             <div className="right-short-sleeve" ref="rightShortSleeve"></div>
                           </div>
                         </div>
                         <div className="waist" ref="waist"></div>
                         <div className="legs">
                           <div className="leg left" ref="leftLeg">
+                            <div className="foot" ref="Lfoot"></div>
                             <div className="shoe" ref="Lshoe"></div>
                           </div>
                           <div className="leg right" ref="rightLeg">
+                            <div className="foot" ref="Rfoot"></div>
                             <div className="shoe" ref="Rshoe"></div>
                           </div>
                         </div>
@@ -137,6 +152,7 @@ class Wardrobe extends React.Component {
                 <form style={{margin: "10px 0px 0px 0px"}}>
                 <label>
                     <select value={this.state.skintone}  onChange={this.changeSkintone}>
+                        <option>Select Skintone</option>
                         <option value="#260701" style={{background: "#260701", color: "#FFF"}}>Root Beer</option>
                         <option value="#3D0C02" style={{background: "#3D0C02", color: "#FFF"}}>Black Bean</option>
                         <option value="#843722" style={{background: "#843722", color: "#FFF"}}>Burnt Umber</option>

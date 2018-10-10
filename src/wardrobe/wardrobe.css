@@ -1,6 +1,6 @@
 .user {
-    color: black;
-    width: 60%;
+    background-color: rgba(0,0,0,0.5);
+    width: 80%;
     height: 50%;
     flex: 0;
     margin: 0 auto;
@@ -13,8 +13,9 @@
     padding: 20px;
     width: 100%;
     height: 100%;
-    background-color: antiquewhite;
+    background-color: rgba(0,0,0,0.5);
     box-sizing: border-box;
+    margin-bottom: 15px;
 }
   
 .head {
@@ -66,15 +67,26 @@
   left: -26px;
   border-radius: 15%;
 }
-.left-short-sleeve {
-  height: 55px;
+
+.left-short-sleeve, .left-long-sleeve {
   width: 20%;
-  position: relative;
+  position: absolute;
   background-color: var(--clothes-color);
   transform: rotate(21.5deg);
-  left: -15px;
   border-radius: 15%;
 }
+
+.left-long-sleeve {
+  height: 110px;
+  left: -26px;
+}
+
+.left-short-sleeve {
+  height: 55px;
+  left: -15px;
+  transform: rotate(21.5deg);
+}
+
 .right-arm {
   height: 110px;
   width: 20%;
@@ -83,16 +95,27 @@
   border-radius: 15%;
   right: -22px;
 }
-.right-short-sleeve {
-  height: 55px;
+.right-short-sleeve, .right-long-sleeve {
   width: 20%;
   background-color: var(--clothes-color);
   position: absolute;
-  transform: rotate(160deg);
   border-radius: 15%;
+}
+
+.right-long-sleeve {
+  height: 110px;
+  transform: rotate(161deg);
+  top: 0px;
+  right: -22px;
+}
+
+.right-short-sleeve {
+  height: 55px;
+  transform: rotate(160deg);
   top: 1px;
   right: -13px;
 }
+
 .left-hand {
   width: 20px;
   height: 22px;
@@ -151,7 +174,7 @@
   z-index: 1;
   background-color: var(--pants-color);
 }
-.shoe {
+.shoe, .foot {
   content: "";
   position: absolute;
   z-index:0;
@@ -159,9 +182,17 @@
   width: 100%;
   left: 0px;
   height: 30px;
-  background-color: black;
   border-radius: 50px 50px 5px 5px;
 }
+
+.shoe {
+  background-color: black;
+}
+
+.foot {
+  background-color: #C68642;
+}
+
 .leg.right {
   float: right; 
 }
