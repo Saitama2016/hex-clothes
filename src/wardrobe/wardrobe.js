@@ -1,5 +1,6 @@
 import React from 'react';
 import './wardrobe.css';
+import { SwatchesPicker } from 'react-color';
 
 class Wardrobe extends React.Component {
     constructor(props) {
@@ -18,12 +19,16 @@ class Wardrobe extends React.Component {
                color: "black",
                style: "shoes"
             },
+            background: "#fff",
+            background2: "#fff"
         }
         
         this.changeSkintone = this.changeSkintone.bind(this);
         this.changeShirt = this.changeShirt.bind(this);
         this.changePants = this.changePants.bind(this);
         this.removeShoes = this.removeShoes.bind(this);
+        this.handleChangeComplete = this.handleChangeComplete.bind(this);
+        this.colorPants = this.colorPants.bind(this);
     }
 
     /*
@@ -103,7 +108,31 @@ class Wardrobe extends React.Component {
         }
     }
 
+    handleChangeComplete = (color) => {
+        this.setState({ background: color.hex });
+        this.refs.shirt.style.backgroundColor = color.hex;
+        this.refs.collar.style.backgroundColor = color.hex;
+        this.refs.leftShortSleeve.style.backgroundColor = color.hex;
+        this.refs.leftLongSleeve.style.backgroundColor = color.hex;
+        this.refs.rightShortSleeve.style.backgroundColor = color.hex;
+        this.refs.rightLongSleeve.style.backgroundColor = color.hex;
+    };
+
+    colorPants = (color) => {
+        this.setState({ background2: color.hex });
+        this.refs.waist.style.backgroundColor = color.hex;
+        this.refs.leftLeg.style.backgroundColor = color.hex;
+        this.refs.rightLeg.style.backgroundColor = color.hex;
+    };
+
     render() {
+        const center = {
+            width: "240px",
+            display: "flex",
+            margin: "20px auto",
+            alignItems: "center",
+            justifyContent: "center"
+        }
     return (
         <div>
             <h3>Create your Outfit</h3>
@@ -116,7 +145,7 @@ class Wardrobe extends React.Component {
                         </div>
                         <div className="body">
                           <div className="top"></div>
-                          <div className="collar"></div>
+                          <div className="collar" ref="collar"></div>
                           <div className="left-arm" ref="leftArm">
                             <div className="left-hand" ref="leftHand"></div>
                           </div>
@@ -177,6 +206,14 @@ class Wardrobe extends React.Component {
                         <option value="button-shirt">Button Shirt</option>
                         <option value="tank-top">Tank Top</option>
                     </select>
+                    {/* Customize colors for Skintones and reset color when Skintone changes */}
+                    <div style = { center }>
+                    <SwatchesPicker 
+                        color = {this.state.background}
+                        onChangeComplete={this.handleChangeComplete}
+                    />
+                    </div>
+                    {/* Include Color Picker */}
 
                     <select value={this.state.pants} onChange={this.changePants}>
                         <option>Select Pants</option>
@@ -185,6 +222,14 @@ class Wardrobe extends React.Component {
                         <option value="khakis">Khakis</option>
                         <option value="dress-pants">Dress Pants</option>
                     </select>
+
+                    <div style = { center }>
+                    <SwatchesPicker 
+                        color = {this.state.background2}
+                        onChangeComplete={this.colorPants}
+                    />
+                    </div>
+                    {/* Include Color Picker */}
 
                     <select value={this.state.shoe} onChange={this.removeShoes}>
                         <option>Select Shoes</option>
