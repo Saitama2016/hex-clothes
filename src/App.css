@@ -122,8 +122,9 @@ section:nth-child(even) {
   transform: rotate(180deg);
 }
 
-.modernClothes {
+.modernClothes, .colorWheel {
   margin-top: 1.2em;
+  height: 200px;
   width: 250px;
 }
 

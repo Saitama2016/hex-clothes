@@ -1,19 +1,16 @@
 import React, { Component } from 'react';
 import { TopNav } from './landingPage/topNav';
 import { SideNav } from './landingPage/sideNav';
-import { BrowserRouter as Router, Route, Link, Redirect, withRouter } from 'react-router-dom';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 import './App.css';
 import { About } from './landingPage/about';
 import Login from './session/loginForm';
 import signUp from './session/registerForm';
-import Avatar from './avatarLog/avatar';
 import Wardrobe from './wardrobe/wardrobe';
 
 
 class App extends Component {
-
-  // showSideNav() {}
 
   render() {
     return (
@@ -29,7 +26,6 @@ class App extends Component {
         <main>
           <Route exact path="/" component={About}></Route>
           <Route path="/about" component={About}></Route>
-          <Route path="/avatar" component={Avatar}></Route>
           <Route path="/wardrobe" component={Wardrobe}></Route>
           <Route path="/login" component={Login}></Route>
           <Route path="/signup" component={signUp}></Route>

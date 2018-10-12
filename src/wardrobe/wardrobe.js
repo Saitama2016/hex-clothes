@@ -1,6 +1,6 @@
 import React from 'react';
 import './wardrobe.css';
-import { SwatchesPicker } from 'react-color';
+import { ChromePicker } from 'react-color';
 
 class Wardrobe extends React.Component {
     constructor(props) {
@@ -39,15 +39,25 @@ class Wardrobe extends React.Component {
     /* Include skintone function in wardrobe */
 
     changeSkintone(event) {
+        // console.log(event.target.value);
         this.setState({skintone: event.target.value});
-        console.log(event.target.value);
-        console.log(this.refs);
+        // console.log(event.target.value);
+        // console.log(this.refs);
         // console.log(this.refs.head.style.color);
+        // Add event listener to show clothing options when skintone
+        // is selected. Hide clothing options and reset to default settings
+        // if skintone value is null.
         Object.keys(this.refs).filter(function(r) { 
            return /(head|neck|arm|hand|foot)/i.test(r)
         }).forEach( function(ref) {
             this.refs[ref].style.backgroundColor = event.target.value;
         }.bind(this));
+        if (event.target.value === "Select Skintone") {
+            console.log(event.target.value);
+            console.log('Hide clothing options');
+        } else {
+            console.log('Show clothing options')
+        }
     }
 
     changeShirt(event) {
@@ -65,7 +75,7 @@ class Wardrobe extends React.Component {
             this.refs.leftLongSleeve.style.visibility = "hidden";
             this.refs.rightLongSleeve.style.visibility = "hidden";
         }
-        else if (event.target.value === "button-shirt") {
+        else if (event.target.value === "long-sleeve-shirt") {
             this.refs.leftShortSleeve.style.visibility = "hidden";
             this.refs.rightShortSleeve.style.visibility = "hidden";
             this.refs.leftLongSleeve.style.visibility = "visible";
@@ -131,7 +141,8 @@ class Wardrobe extends React.Component {
             display: "flex",
             margin: "20px auto",
             alignItems: "center",
-            justifyContent: "center"
+            justifyContent: "center",
+            touchAction: "none"
         }
     return (
         <div>
@@ -181,7 +192,7 @@ class Wardrobe extends React.Component {
                 <form style={{margin: "10px 0px 0px 0px"}}>
                 <label>
                     <select value={this.state.skintone}  onChange={this.changeSkintone}>
-                        <option>Select Skintone</option>
+                        <option value="Select Skintone">Select Skintone</option>
                         <option value="#260701" style={{background: "#260701", color: "#FFF"}}>Root Beer</option>
                         <option value="#3D0C02" style={{background: "#3D0C02", color: "#FFF"}}>Black Bean</option>
                         <option value="#843722" style={{background: "#843722", color: "#FFF"}}>Burnt Umber</option>
@@ -201,14 +212,13 @@ class Wardrobe extends React.Component {
                     </select>
 
                     <select value={this.state.shirt} onChange={this.changeShirt}>
-                        <option>Select Shirt</option>
+                        <option value="long-sleeve-shirt">Long Sleeve Shirt</option>
                         <option value="t-shirt">T-shirt</option>
-                        <option value="button-shirt">Button Shirt</option>
                         <option value="tank-top">Tank Top</option>
                     </select>
                     {/* Customize colors for Skintones and reset color when Skintone changes */}
                     <div style = { center }>
-                    <SwatchesPicker 
+                    <ChromePicker
                         color = {this.state.background}
                         onChangeComplete={this.handleChangeComplete}
                     />
@@ -216,7 +226,6 @@ class Wardrobe extends React.Component {
                     {/* Include Color Picker */}
 
                     <select value={this.state.pants} onChange={this.changePants}>
-                        <option>Select Pants</option>
                         <option value="jeans">Jeans</option>
                         <option value="chinos">Chinos</option>
                         <option value="khakis">Khakis</option>
@@ -224,7 +233,7 @@ class Wardrobe extends React.Component {
                     </select>
 
                     <div style = { center }>
-                    <SwatchesPicker 
+                    <ChromePicker 
                         color = {this.state.background2}
                         onChangeComplete={this.colorPants}
                     />
@@ -232,11 +241,12 @@ class Wardrobe extends React.Component {
                     {/* Include Color Picker */}
 
                     <select value={this.state.shoe} onChange={this.removeShoes}>
-                        <option>Select Shoes</option>
                         <option value="shoes">Shoes</option>
                         <option value="no-shoes">No Shoes</option>
                     </select>
                 </label>
+                <br />
+                <button className="modelSubmit">Submit</button>
             </form>
             </section>
             <h3>Checkout your previous Outfits</h3>

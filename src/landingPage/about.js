@@ -1,5 +1,4 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Link, Redirect, withRouter } from 'react-router-dom';
 
 export function About() {
     return (
@@ -15,8 +14,14 @@ export function About() {
             </section>
             <section>
                 <div className="step">
-                  <p>Step 2: Create your outfits using our recommended complimentary colors!</p>
-                  <img className="modernClothes" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYr8px-MHe9V1XrnO4rWuf5ZIkrsTXjN9b2jEH7TOybnQ30_au" alt="stack of modern clothes" />
+                  <p>Step 2: Select Articles of Clothing!</p>
+                  <img className="modernClothes" src="https://i.pinimg.com/originals/8c/b2/93/8cb2938475839ee884ab673c7f517b10.jpg" alt="Mannequin options" />
+                </div>
+            </section>
+            <section>
+                <div className="step">
+                  <p>Step 3: Select Color of Your Clothes!</p>
+                  <img className="colorWheel" src="https://www.sessions.edu/wp-content/themes/divi-child/color-calculator/wheel-3-rgb.png" alt="Color Wheel" />
                 </div>
             </section>
         </div>
