@@ -6,10 +6,10 @@ class Wardrobe extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            skintone: '#E0AC68',
+            skintone: 'Select Skintone',
             shirt: {
                color: "white",
-               style: "t-shirt"
+               style: "long-sleeve-shirt"
             },
             pants: {
                color: "#1560BD",
@@ -39,11 +39,7 @@ class Wardrobe extends React.Component {
     /* Include skintone function in wardrobe */
 
     changeSkintone(event) {
-        // console.log(event.target.value);
         this.setState({skintone: event.target.value});
-        // console.log(event.target.value);
-        // console.log(this.refs);
-        // console.log(this.refs.head.style.color);
         // Add event listener to show clothing options when skintone
         // is selected. Hide clothing options and reset to default settings
         // if skintone value is null.
@@ -55,7 +51,30 @@ class Wardrobe extends React.Component {
         if (event.target.value === "Select Skintone") {
             console.log(event.target.value);
             console.log('Hide clothing options');
+            this.refs.clothingOptions.style.display = "none";
+            Object.keys(this.refs).filter(function(r) { 
+                return /(head|neck|arm|hand|foot)/i.test(r)
+             }).forEach( function(ref) {
+                 this.refs[ref].style.backgroundColor = "#C68642";
+             }.bind(this));
+            Object.keys(this.refs).filter(function(r) { 
+                return /(waist|leg)/i.test(r)
+             }).forEach( function(ref) {
+                 this.refs[ref].style.backgroundColor = "#1560BD";
+             }.bind(this));
+            Object.keys(this.refs).filter(function(r) { 
+                return /(shirt|collar|sleeve)/i.test(r)
+             }).forEach( function(ref) {
+                 this.refs[ref].style.backgroundColor = "white";
+             }.bind(this));
+            this.refs.leftShortSleeve.style.visibility = "hidden";
+            this.refs.rightShortSleeve.style.visibility = "hidden";
+            this.refs.leftLongSleeve.style.visibility = "visible";
+            this.refs.rightLongSleeve.style.visibility = "visible";
+            this.refs.Lshoe.style.visibility = "visible";
+            this.refs.Rshoe.style.visibility = "visible";
         } else {
+            this.refs.clothingOptions.style.display = "block";
             console.log('Show clothing options')
         }
     }
@@ -211,6 +230,7 @@ class Wardrobe extends React.Component {
                         <option value="#FFDBAC" style={{background: "#FFDBAC"}}>Navajo White</option>
                     </select>
 
+                    <div className="clothingOptions" ref="clothingOptions">
                     <select value={this.state.shirt} onChange={this.changeShirt}>
                         <option value="long-sleeve-shirt">Long Sleeve Shirt</option>
                         <option value="t-shirt">T-shirt</option>
@@ -244,6 +264,7 @@ class Wardrobe extends React.Component {
                         <option value="shoes">Shoes</option>
                         <option value="no-shoes">No Shoes</option>
                     </select>
+                    </div>
                 </label>
                 <br />
                 <button className="modelSubmit">Submit</button>
