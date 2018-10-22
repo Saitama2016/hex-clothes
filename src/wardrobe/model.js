@@ -7,13 +7,17 @@ class Model extends Component {
                 skintone: "#C68642",
                 colorClothes: "#FFF",
                 pantsColor: "#1560BD",
-                shoesColor: "#000"
+                shoesColor: "#000",
+                showLongSleeve: "visible",
+                showShortSleeve: "visible"
         }
 }
 
     
     render () {
         const skintone = this.props.skintone;
+        const colorClothes = this.props.colorClothes;
+        const pantsColor = this.props.pantsColor;
 
         return (
         <div className="user" >
@@ -23,27 +27,27 @@ class Model extends Component {
             </div>
             <div className="body" style={{backgroundColor: skintone}}>
               <div className="top" style={{backgroundColor: skintone}}></div>
-              <div className="collar" style={{backgroundColor: this.state.colorClothes}}></div>
+              <div className="collar" style={{backgroundColor: colorClothes}}></div>
               <div className="left-arm" style={{backgroundColor: skintone}}>
                 <div className="left-hand" style={{backgroundColor: skintone}}></div>
               </div>
               <div className="right-arm" style={{backgroundColor: skintone}}>
                 <div className="right-hand" style={{backgroundColor: skintone}}></div>
               </div>
-              <div className="shirt" style={{backgroundColor: this.state.colorClothes}}>
-                <div className="left-short-sleeve" style={{backgroundColor: this.state.colorClothes}}></div>
-                <div className="left-long-sleeve" style={{backgroundColor: this.state.colorClothes}}></div>
-                <div className="right-long-sleeve" style={{backgroundColor: this.state.colorClothes}}></div>
-                <div className="right-short-sleeve" style={{backgroundColor: this.state.colorClothes}}></div>
+              <div className="shirt" style={{backgroundColor: colorClothes}}>
+                <div className="left-short-sleeve" style={{backgroundColor: colorClothes, visibility: this.state.showShortSleeve}}></div>
+                <div className="left-long-sleeve" style={{backgroundColor: colorClothes, visibility: this.state.showLongSleeve}}></div>
+                <div className="right-long-sleeve" style={{backgroundColor: colorClothes, visibility: this.state.showLongSleeve}}></div>
+                <div className="right-short-sleeve" style={{backgroundColor: colorClothes, visibility: this.state.showShortSleeve}}></div>
               </div>
             </div>
-            <div className="waist" style={{backgroundColor: this.state.pantsColor}}></div>
+            <div className="waist" style={{backgroundColor: pantsColor}}></div>
             <div className="legs">
-              <div className="leg left" style={{backgroundColor: this.state.pantsColor}}>
+              <div className="leg left" style={{backgroundColor: pantsColor}}>
                 <div className="foot" style={{backgroundColor: skintone}}></div>
                 <div className="shoe" style={{backgroundColor: this.state.shoesColor}}></div>
               </div>
-              <div className="leg right" style={{backgroundColor: this.state.pantsColor}}>
+              <div className="leg right" style={{backgroundColor: pantsColor}}>
                 <div className="foot" style={{backgroundColor: skintone}}></div>
                 <div className="shoe" style={{backgroundColor: this.state.shoesColor}}></div>
               </div>

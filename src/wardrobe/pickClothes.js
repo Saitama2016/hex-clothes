@@ -6,7 +6,10 @@ class ClothesPicker extends React.Component {
         super(props);
         this.state = {
             colorClothes: "#FFF",
-            pantsColor: "#1560BD"
+            pantsColor: "#1560BD",
+            showLongSleeve: "visible",
+            showShortSleeve: "visible",
+            shirtType: 'long-sleeve-shirt'
         }
 
         this.changeShirt = this.changeShirt.bind(this);
@@ -17,7 +20,10 @@ class ClothesPicker extends React.Component {
     }
 
     changeShirt(event) {
-        this.setState({ colorClothes: event.target.value });
+        this.setState({ shirtType: event.target.value });
+        if (this.state.shirtType === "tank-top") {
+            this.props.onHideSleeves(this.setState({showLongSleeve: 'hidden', showShortSleeve: 'hidden'}));
+        }
     }
 
     changePants(event) {
@@ -27,17 +33,16 @@ class ClothesPicker extends React.Component {
     removeShoes(event) {
         // const newState = Object.assign({ style: event.target.value }, this.state.shoe);
         this.setState({ shoe: event.target.value });
-        if (event.target.value === "no-shoes") {
-            console.log(this.refs.head.style.backgroundColor);
-        }
     }
 
     handleChangeComplete = (color) => {
         this.setState({ colorClothes: color.hex });
+        this.props.onColorClothesChange(this.state.colorClothes = color.hex);
     };
 
     colorPants = (color) => {
         this.setState({ pantsColor: color.hex });
+        this.props.onPantsColorChange(this.state.pantsColor = color.hex);
     };
 
 
@@ -56,7 +61,7 @@ class ClothesPicker extends React.Component {
 
         return (
             <div className="clothingOptions">
-                <select value="long-sleeve-shirt" onChange={this.changeShirt}>
+                <select value={this.state.shirtType} onChange={this.changeShirt}>
                     <option value="long-sleeve-shirt">Long Sleeve Shirt</option>
                     <option value="t-shirt">T-shirt</option>
                     <option value="tank-top">Tank Top</option>
