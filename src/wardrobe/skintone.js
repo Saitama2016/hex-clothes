@@ -5,17 +5,18 @@ class Skintones extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            skintone: 'Select Skintone',
-            colorClothes: '#FFF',
-            pantsColor: '#1560BD',
-            showLongSleeve: 'visible',
-            showShortSleeve: 'visible',
+            skintone: "Select Skintone",
+            colorClothes: "#FFF",
+            pantsColor: "#1560BD",
+            showLongSleeve: "visible",
+            showShortSleeve: "visible",
             showForm: false
         }
 
         this.openForm = this.openForm.bind(this);
         this.changeColorClothes = this.changeColorClothes.bind(this);
         this.changePantsColors = this.changePantsColors.bind(this);
+        this.hideSleeves = this.hideSleeves.bind(this);
     }
 
 

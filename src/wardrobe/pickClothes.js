@@ -9,7 +9,7 @@ class ClothesPicker extends React.Component {
             pantsColor: "#1560BD",
             showLongSleeve: "visible",
             showShortSleeve: "visible",
-            shirtType: 'long-sleeve-shirt'
+            shirtType: "long-sleeve-shirt"
         }
 
         this.changeShirt = this.changeShirt.bind(this);
@@ -20,9 +20,21 @@ class ClothesPicker extends React.Component {
     }
 
     changeShirt(event) {
+        console.log(event.target.value);
+        // Delay in updating state, use Redux!
         this.setState({ shirtType: event.target.value });
-        if (this.state.shirtType === "tank-top") {
-            this.props.onHideSleeves(this.setState({showLongSleeve: 'hidden', showShortSleeve: 'hidden'}));
+        if (event.target.value === "tank-top") {
+            console.log("Hide sleeves");
+            this.props.onHideSleeves(this.state.showLongSleeve = 'hidden');
+            this.props.onHideSleeves(this.state.showShortSleeve = 'hidden');
+        } else if (event.target.value === "t-shirt") {
+            console.log("Show Short Sleeve");
+            this.props.onHideSleeves(this.state.showLongSleeve = 'hidden');
+            this.props.onHideSleeves(this.state.showShortSleeve = 'visible');
+            console.log(this.state.showLongSleeve);
+        } else if (event.target.value === "long-sleeve-shirt") {
+            this.props.onHideSleeves(this.state.showLongSleeve = 'visible');
+            this.props.onHideSleeves(this.state.showShortSleeve = 'visible');
         }
     }
 

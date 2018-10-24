@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 
+
 class Model extends Component {
     constructor(props) {
         super(props);
@@ -18,6 +19,8 @@ class Model extends Component {
         const skintone = this.props.skintone;
         const colorClothes = this.props.colorClothes;
         const pantsColor = this.props.pantsColor;
+        const showLongSleeve = this.props.showLongSleeve;
+        const showShortSleeve = this.props.showShortSleeve;
 
         return (
         <div className="user" >
@@ -35,10 +38,10 @@ class Model extends Component {
                 <div className="right-hand" style={{backgroundColor: skintone}}></div>
               </div>
               <div className="shirt" style={{backgroundColor: colorClothes}}>
-                <div className="left-short-sleeve" style={{backgroundColor: colorClothes, visibility: this.state.showShortSleeve}}></div>
-                <div className="left-long-sleeve" style={{backgroundColor: colorClothes, visibility: this.state.showLongSleeve}}></div>
-                <div className="right-long-sleeve" style={{backgroundColor: colorClothes, visibility: this.state.showLongSleeve}}></div>
-                <div className="right-short-sleeve" style={{backgroundColor: colorClothes, visibility: this.state.showShortSleeve}}></div>
+                <div className="left-short-sleeve" style={{backgroundColor: colorClothes, visibility: showShortSleeve}}></div>
+                <div className="left-long-sleeve" style={{backgroundColor: colorClothes, visibility: showLongSleeve}}></div>
+                <div className="right-long-sleeve" style={{backgroundColor: colorClothes, visibility: showLongSleeve}}></div>
+                <div className="right-short-sleeve" style={{backgroundColor: colorClothes, visibility: showShortSleeve}}></div>
               </div>
             </div>
             <div className="waist" style={{backgroundColor: pantsColor}}></div>

@@ -64,6 +64,8 @@ class Wardrobe extends React.Component {
                     colorClothes = {colorClothes}
                     pantsColor = {pantsColor}
                     shoesColor = {shoesColor}
+                    showLongSleeve = {showLongSleeve}
+                    showShortSleeve = {showShortSleeve}
                     onSkintoneChange={this.changeSkintone}
                     onColorClothesChange={this.changeColorClothes}
                     onPantsColorChange={this.changePantsColor}
