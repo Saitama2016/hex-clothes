@@ -1,5 +1,6 @@
 import React from 'react';
 import { ChromePicker } from 'react-color';
+import {connect} from 'react-redux';
 
 class ClothesPicker extends React.Component {
     constructor(props) {
@@ -68,8 +69,8 @@ class ClothesPicker extends React.Component {
             touchAction: "none"
         }
 
-        const pantsColor = this.state.pantsColor;
-        const colorClothes = this.state.colorClothes;
+        const pantsColor = this.props.pantsColor;
+        const colorClothes = this.props.colorClothes;
 
         return (
             <div className="clothingOptions">
@@ -111,4 +112,11 @@ class ClothesPicker extends React.Component {
     }
 }
 
-export default ClothesPicker;
+function mapStateToProps(state) {
+    return {
+        pantsColor: state.pantsColor,
+        colorClothes: state.colorClothes
+    }
+}
+
+export default connect(mapStateToProps)(ClothesPicker);

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {connect} from 'react-redux';
 
 
 class Model extends Component {
@@ -8,7 +9,6 @@ class Model extends Component {
                 skintone: "#C68642",
                 colorClothes: "#FFF",
                 pantsColor: "#1560BD",
-                shoesColor: "#000",
                 showLongSleeve: "visible",
                 showShortSleeve: "visible"
         }
@@ -61,4 +61,14 @@ class Model extends Component {
     }
 }
 
-export default Model;
+function mapStateToProps(state) {
+  return {
+    skintone: state.skintone,
+    colorClothes: state.colorClothes,
+    pantsColor: state.pantsColor,
+    showShortSleeve: state.showShortSleeve,
+    showLongSleeve: state.showLongSleeve
+  }
+}
+
+export default connect(mapStateToProps)(Model);

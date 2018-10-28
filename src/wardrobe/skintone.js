@@ -1,5 +1,6 @@
 import React from 'react';
 import ClothesPicker from './pickClothes';
+import {connect} from 'react-redux';
 
 class Skintones extends React.Component {
     constructor(props) {
@@ -54,11 +55,11 @@ class Skintones extends React.Component {
 
     render () {
 
-        const skintone = this.state.skintone;
-        const colorClothes = this.state.colorClothes;
-        const pantsColor = this.state.pantsColor;
-        const showLongSleeve = this.state.showLongSleeve;
-        const showShortSleeve = this.state.showShortSleeve;
+        const skintone = this.props.skintone;
+        const colorClothes = this.props.colorClothes;
+        const pantsColor = this.props.pantsColor;
+        const showLongSleeve = this.props.showLongSleeve;
+        const showShortSleeve = this.props.showShortSleeve;
 
         return (
             <form style={{margin: "10px 0px 0px 0px"}}>
@@ -103,4 +104,14 @@ class Skintones extends React.Component {
     }
 }
 
-export default Skintones;
+function mapStateToProps(state) {
+    return {
+        skintone: state.skintone,
+        colorClothes: state.colorClothes,
+        pantsColor: state.pantsColor,
+        showLongSleeve: state.showLongSleeve,
+        showShortSleeve: state.showShortSleeve
+    }
+}
+
+export default connect(mapStateToProps)(Skintones);
