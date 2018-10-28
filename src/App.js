@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 import { TopNav } from './landingPage/topNav';
 import { SideNav } from './landingPage/sideNav';
 import { BrowserRouter as Router, Route } from 'react-router-dom';

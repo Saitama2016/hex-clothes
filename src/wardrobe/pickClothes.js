@@ -112,11 +112,4 @@ class ClothesPicker extends React.Component {
     }
 }
 
-function mapStateToProps(state) {
-    return {
-        pantsColor: state.pantsColor,
-        colorClothes: state.colorClothes
-    }
-}
-
-export default connect(mapStateToProps)(ClothesPicker);
+export default ClothesPicker;

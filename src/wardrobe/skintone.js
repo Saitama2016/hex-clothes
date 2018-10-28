@@ -104,14 +104,4 @@ class Skintones extends React.Component {
     }
 }
 
-function mapStateToProps(state) {
-    return {
-        skintone: state.skintone,
-        colorClothes: state.colorClothes,
-        pantsColor: state.pantsColor,
-        showLongSleeve: state.showLongSleeve,
-        showShortSleeve: state.showShortSleeve
-    }
-}
-
-export default connect(mapStateToProps)(Skintones);
+export default Skintones;

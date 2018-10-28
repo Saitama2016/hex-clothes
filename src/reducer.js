@@ -1,4 +1,4 @@
-import {SELECT_SKINTONE} from './actions';
+import * as actions from './actions';
 
 const initialState = {
     skintone: "#C68642",
@@ -9,7 +9,7 @@ const initialState = {
 };
 
 export default (state = initialState, action) => {
-    if (action.type === SELECT_SKINTONE) {
+    if (action.type === actions.SELECT_SKINTONE) {
         
     }
 }

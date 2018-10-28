@@ -61,14 +61,5 @@ class Model extends Component {
     }
 }
 
-function mapStateToProps(state) {
-  return {
-    skintone: state.skintone,
-    colorClothes: state.colorClothes,
-    pantsColor: state.pantsColor,
-    showShortSleeve: state.showShortSleeve,
-    showLongSleeve: state.showLongSleeve
-  }
-}
 
-export default connect(mapStateToProps)(Model);
+export default Model;
