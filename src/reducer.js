@@ -1,11 +1,17 @@
 import * as actions from './actions';
 
 const initialState = {
+    text: "Select Skintone",
+    showForm: false,
     skintone: "#C68642",
     colorClothes: "#FFF",
-    pantsColor: "#1560BD",
+    shirtType: "long-sleeve-shirt",
     showLongSleeve: "visible",
-    showShortSleeve: "visible"
+    showShortSleeve: "visible",
+    pantsColor: "#1560BD",
+    pantsType: "jeans",
+    showShoes: true,
+    shoesColor: "#000"
 };
 
 export default (state = initialState, action) => {
