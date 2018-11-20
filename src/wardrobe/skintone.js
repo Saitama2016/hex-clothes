@@ -63,7 +63,7 @@ class Skintones extends React.Component {
 
         return (
             <form style={{margin: "10px 0px 0px 0px"}}>
-            <label>
+            <label>Select Skintone:
                 <select value={skintone}  onChange={this.openForm}>
                     <option value="Select Skintone">Select Skintone</option>
                     <option value="#260701" style={{background: "#260701", color: "#FFF"}}>Root Beer</option>

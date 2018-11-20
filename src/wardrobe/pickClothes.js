@@ -1,5 +1,6 @@
 import React from 'react';
 import { ChromePicker } from 'react-color';
+import SelectColorShirt from './selectColorShirt';
 import {connect} from 'react-redux';
 
 class ClothesPicker extends React.Component {
@@ -48,9 +49,8 @@ class ClothesPicker extends React.Component {
         this.setState({ shoe: event.target.value });
     }
 
-    handleChangeComplete = (color) => {
-        this.setState({ colorClothes: color.hex });
-        this.props.onColorClothesChange(this.state.colorClothes = color.hex);
+    handleChangeComplete = (newColorClothes) => {
+        this.setState({ colorClothes: newColorClothes });
     };
 
     colorPants = (color) => {
@@ -81,7 +81,7 @@ class ClothesPicker extends React.Component {
                 </select>
                 {/* Customize colors for Skintones and reset color when Skintone changes */}
                 <div style = { center }>
-                <ChromePicker
+                <SelectColorShirt
                     color = {colorClothes}
                     onChangeComplete={this.handleChangeComplete}
                 />
@@ -98,7 +98,6 @@ class ClothesPicker extends React.Component {
                 <div style = { center }>
                 <ChromePicker 
                     color = {pantsColor}
-                    onChangeComplete={this.colorPants}
                 />
                 </div>
                 {/* Include Color Picker */}
