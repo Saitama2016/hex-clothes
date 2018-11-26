@@ -1,24 +1,28 @@
 import React from 'react';
 import ClothesPicker from './pickClothes';
 import {connect} from 'react-redux';
+import { Field, reduxForm, formValueSelector } from 'redux-form';
 
-class Skintones extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            skintone: "Select Skintone",
-            colorClothes: "#FFF",
-            pantsColor: "#1560BD",
-            showLongSleeve: "visible",
-            showShortSleeve: "visible",
-            showForm: false
-        }
-
-        this.openForm = this.openForm.bind(this);
-        this.changeColorClothes = this.changeColorClothes.bind(this);
-        this.changePantsColors = this.changePantsColors.bind(this);
-        this.hideSleeves = this.hideSleeves.bind(this);
+export class Skintones extends React.Component {
+    onSubmit(event) {
+        event.preventDefault();
     }
+    // constructor(props) {
+    //     super(props);
+    //     this.state = {
+    //         skintone: "Select Skintone",
+    //         colorClothes: "#FFF",
+    //         pantsColor: "#1560BD",
+    //         showLongSleeve: "visible",
+    //         showShortSleeve: "visible",
+    //         showForm: false
+    //     }
+
+    //     this.openForm = this.openForm.bind(this);
+    //     this.onChangeShirtColor = this.onChangeShirtColor.bind(this);
+    //     this.changePantsColors = this.changePantsColors.bind(this);
+    //     this.hideSleeves = this.hideSleeves.bind(this);
+    // }
 
 
 
@@ -35,13 +39,13 @@ class Skintones extends React.Component {
         }
     }
 
-    changeColorClothes(newColorClothes) {
+    onChangeShirtColor(newColorClothes) {
         this.setState({colorClothes: newColorClothes});
-        this.props.onColorClothesChange(this.state.colorClothes);
+        this.props.onChangeShirtColor(this.state.colorClothes);
     }
 
-    changePantsColors(newPantsColor) {
-        this.setState({pantsColor: newPantsColor});
+    changePantsColors(pantsColor) {
+        this.setState({pantsColor});
         this.props.onPantsColorChange(this.state.pantsColor);
     }
 
@@ -62,7 +66,7 @@ class Skintones extends React.Component {
         const showShortSleeve = this.props.showShortSleeve;
 
         return (
-            <form style={{margin: "10px 0px 0px 0px"}}>
+            <form style={{margin: "10px 0px 0px 0px"}} onSubmit={}>
             <label>Select Skintone:
                 <select value={skintone}  onChange={this.openForm}>
                     <option value="Select Skintone">Select Skintone</option>
@@ -92,13 +96,17 @@ class Skintones extends React.Component {
                     showLongSleeve = {showLongSleeve}
                     showShortSleeve = {showShortSleeve}
                     onChange={this.openForm}
-                    onColorClothesChange={this.changeColorClothes}
+                    onChangeShirtColor={this.onChangeShirtColor}
                     onPantsColorChange={this.changePantsColors}
                     onHideSleeves={this.hideSleeves}
                     />}
             </label>
             <br />
-            <button className="modelSubmit">Submit</button>
+            <button 
+                type="submit"
+                className="modelSubmit"
+            >
+            Submit</button>
             </form>
         );
     }

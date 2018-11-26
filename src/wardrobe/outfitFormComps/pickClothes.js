@@ -3,23 +3,7 @@ import { ChromePicker } from 'react-color';
 import SelectColorShirt from './selectColorShirt';
 import {connect} from 'react-redux';
 
-class ClothesPicker extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            colorClothes: "#FFF",
-            pantsColor: "#1560BD",
-            showLongSleeve: "visible",
-            showShortSleeve: "visible",
-            shirtType: "long-sleeve-shirt"
-        }
-
-        this.changeShirt = this.changeShirt.bind(this);
-        this.changePants = this.changePants.bind(this);
-        this.removeShoes = this.removeShoes.bind(this);
-        this.handleChangeComplete = this.handleChangeComplete.bind(this);
-        this.colorPants = this.colorPants.bind(this);
-    }
+export class ClothesPicker extends React.Component {
 
     changeShirt(event) {
         console.log(event.target.value);
@@ -49,8 +33,9 @@ class ClothesPicker extends React.Component {
         this.setState({ shoe: event.target.value });
     }
 
-    handleChangeComplete = (newColorClothes) => {
-        this.setState({ colorClothes: newColorClothes });
+    onChangeShirtColor(newColorClothes) {
+        this.setState({colorClothes: newColorClothes});
+        this.props.onChangeShirtColor(this.state.colorClothes);
     };
 
     colorPants = (color) => {
@@ -81,9 +66,10 @@ class ClothesPicker extends React.Component {
                 </select>
                 {/* Customize colors for Skintones and reset color when Skintone changes */}
                 <div style = { center }>
+                {/* Have colors be square, clickable buttons. Colors will be based on skin tone */}
                 <SelectColorShirt
                     color = {colorClothes}
-                    onChangeComplete={this.handleChangeComplete}
+                    onChangeShirtColor={this.onChangeShirtColor}
                 />
                 </div>
             {/* Include Color Picker */}
@@ -111,4 +97,12 @@ class ClothesPicker extends React.Component {
     }
 }
 
-export default ClothesPicker;
+const mapStateToProps = (state) => ({
+    colorClothes: state.colorClothes,
+    pantsColor: state.pantsColor,
+    showLongSleeve: state.showLongSleeve,
+    showShortSleeve: state.showShortSleeve,
+    shirtType: state.shirtType
+})
+
+export default connect(mapStateToProps)(ClothesPicker);

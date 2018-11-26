@@ -1,7 +1,7 @@
 import React from 'react';
 import './wardrobe.css';
 import Model from './model';
-import Skintones from './skintone';
+import Skintones from './outfitFormComps/skintone';
 
 class Wardrobe extends React.Component {
     constructor(props) {
@@ -16,7 +16,7 @@ class Wardrobe extends React.Component {
         }
 
         this.changeSkintone = this.changeSkintone.bind(this);
-        this.changeColorClothes = this.changeColorClothes.bind(this);
+        this.onChangeShirtColor = this.onChangeShirtColor.bind(this);
         this.changePantsColor =  this.changePantsColor.bind(this);
         this.hideSleeves = this.hideSleeves.bind(this);
     }
@@ -25,7 +25,7 @@ class Wardrobe extends React.Component {
         this.setState({skintone: newSkintone});
     }
 
-    changeColorClothes(newColorClothes) {
+    onChangeShirtColor(newColorClothes) {
         this.setState({colorClothes: newColorClothes});
     }
 
@@ -67,7 +67,7 @@ class Wardrobe extends React.Component {
                     showLongSleeve = {showLongSleeve}
                     showShortSleeve = {showShortSleeve}
                     onSkintoneChange={this.changeSkintone}
-                    onColorClothesChange={this.changeColorClothes}
+                    onChangeShirtColor={this.onChangeShirtColor}
                     onPantsColorChange={this.changePantsColor}
                     onHideSleeves={this.hideSleeves}
                 />
