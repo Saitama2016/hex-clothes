@@ -1,7 +1,7 @@
 import React from 'react';
 import './wardrobe.css';
 import Model from './model';
-import Skintones from './outfitFormComps/skintone';
+import Skintones from './outfitFormComps/outfitForm';
 
 class Wardrobe extends React.Component {
     constructor(props) {

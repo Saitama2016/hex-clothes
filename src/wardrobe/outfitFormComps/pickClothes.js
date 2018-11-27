@@ -1,6 +1,6 @@
 import React from 'react';
 import { ChromePicker } from 'react-color';
-import SelectColorShirt from './selectColorShirt';
+import SelectColorShirt from './selectShirtColor';
 import {connect} from 'react-redux';
 
 export class ClothesPicker extends React.Component {

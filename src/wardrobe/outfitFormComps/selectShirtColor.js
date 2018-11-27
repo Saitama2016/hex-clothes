@@ -17,4 +17,8 @@ export function SelectColorShirt(props) {
         );
 }
 
+const mapStateToProps = state => ({
+    colorClothes: state.colorClothes
+})
+
 export default connect(mapStateToProps)(SelectColorShirt);
