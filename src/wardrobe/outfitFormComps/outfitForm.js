@@ -12,7 +12,9 @@ export class OutFitForm extends React.Component {
         return (
             <form style={{margin: "10px 0px 0px 0px"}} onSubmit={handleSubmit}>
                 <label>Select Skintone:</label>
-                <SelectSkintone />
+                <SelectSkintone 
+                    onChange = {this.showForm}
+                />
 
                 {this.state.showForm && 
                 <ClothesPicker

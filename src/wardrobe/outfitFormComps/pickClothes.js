@@ -1,5 +1,5 @@
 import React from 'react';
-import { ChromePicker } from 'react-color';
+import { Circle } from 'react-color';
 import SelectColorShirt from './selectShirtColor';
 import {connect} from 'react-redux';
 
@@ -66,13 +66,13 @@ export class ClothesPicker extends React.Component {
                 </select>
                 {/* Customize colors for Skintones and reset color when Skintone changes */}
                 <div style = { center }>
-                {/* Have colors be square, clickable buttons. Colors will be based on skin tone */}
+                {/* Colors will be based on skin tone */}
                 <SelectColorShirt
                     color = {colorClothes}
                     onChangeShirtColor={this.onChangeShirtColor}
                 />
                 </div>
-            {/* Include Color Picker */}
+            {/* Include Pants Components */}
 
                 <select value="jeans" onChange={this.changePants}>
                     <option value="jeans">Jeans</option>
@@ -82,11 +82,11 @@ export class ClothesPicker extends React.Component {
                 </select>
 
                 <div style = { center }>
-                <ChromePicker 
-                    color = {pantsColor}
+                <Circle 
+                    colors = {this.colors}
                 />
                 </div>
-                {/* Include Color Picker */}
+                {/* Include Shoes Component */}
 
                 <select value="shoes" onChange={this.removeShoes}>
                     <option value="shoes">Shoes</option>
@@ -98,11 +98,15 @@ export class ClothesPicker extends React.Component {
 }
 
 const mapStateToProps = (state) => ({
-    colorClothes: state.colorClothes,
-    pantsColor: state.pantsColor,
+    colors: state.colors,
+    shirtColor: state.clothes.shirt.color,
+    shirtType: state.clothes.shirt.type,
+    pantsColor: state.clothes.pants.color,
+    pantsType: state.clothes.pants.type,
+    shoesColor: state.clothes.shoes.color,
+    shoesType: state.clothes.shoes.type,
     showLongSleeve: state.showLongSleeve,
     showShortSleeve: state.showShortSleeve,
-    shirtType: state.shirtType
 })
 
 export default connect(mapStateToProps)(ClothesPicker);
