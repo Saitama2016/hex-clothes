@@ -1,7 +1,6 @@
 import * as actions from './actions';
 
 const initialState = {
-    text: "Select Skintone",
     showForm: false,
     skintone: "#C68642",
     clothes: {
@@ -23,7 +22,7 @@ const initialState = {
 
 export default (state = initialState, action) => {
     if (action.type === actions.SELECT_SKINTONE) {
-        if (skintone === "Select Skintone") {
+        if (state.skintone === null) {
             return Object.assign({}, state, {
                 showForm: false,
                 skintone: "#C68642",
@@ -46,10 +45,15 @@ export default (state = initialState, action) => {
         }
         else {
             return Object.assign({}, state, {
-                showForm: true
+                showForm: true,
+                skintone: state.skintone,
             })
         }
     }
 
-    if(action.type === actions.CHANGE_SHIRT_TYPE) {}
+    if(action.type === actions.CHANGE_SHIRT_TYPE) {
+
+    }
+
+    return state
 }

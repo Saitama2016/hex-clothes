@@ -38,4 +38,12 @@ class App extends Component {
   }
 }
 
-export default App;
+const mapStateToProps = (state) => {
+  return {
+    openForm: state.openForm,
+    skintone: state.skintone,
+    clothes: state.clothes
+  }
+}
+
+export default connect(mapStateToProps)(App);

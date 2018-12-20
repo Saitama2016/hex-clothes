@@ -1,33 +1,18 @@
 import React from 'react';
 import ClothesPicker from './pickClothes';
 import {connect} from 'react-redux';
-import { SelectSkintone } from './skintones';
+import  SelectSkintone from './skintones';
 
-export class OutFitForm extends React.Component {
-    onSubmit(event) {
-        event.preventDefault();
-    }
 
-    render () {
+const OutFitForm = (props) => {
         return (
-            <form style={{margin: "10px 0px 0px 0px"}} onSubmit={handleSubmit}>
+            <form style={{margin: "10px 0px 0px 0px"}}>
                 <label>Select Skintone:</label>
                 <SelectSkintone 
-                    onChange = {this.showForm}
                 />
 
-                {this.state.showForm && 
-                <ClothesPicker
-                    skintone='Select Skintone'
-                    colorClothes = {colorClothes}
-                    pantsColor = {pantsColor}
-                    showLongSleeve = {showLongSleeve}
-                    showShortSleeve = {showShortSleeve}
-                    onChange={this.openForm}
-                    onChangeShirtColor={this.onChangeShirtColor}
-                    onPantsColorChange={this.changePantsColors}
-                    onHideSleeves={this.hideSleeves}
-                    />}
+                {/* <ClothesPicker
+                    /> */}
             <br />
             <button 
                 type="submit"
@@ -37,7 +22,12 @@ export class OutFitForm extends React.Component {
                 </button>
             </form>
         );
-    }
 }
 
-export default connect ()(OutFitForm);
+const mapStateToProps = state => {
+    openForm: state.openForm;
+    skintone: state.skintone;
+    clothes: state.clothes;
+}
+
+export default connect(mapStateToProps)(OutFitForm);

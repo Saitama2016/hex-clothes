@@ -2,64 +2,51 @@ import React, { Component } from 'react';
 import {connect} from 'react-redux';
 
 
-class Model extends Component {
-    constructor(props) {
-        super(props);
-            this.state= {
-                skintone: "#C68642",
-                colorClothes: "#FFF",
-                pantsColor: "#1560BD",
-                showLongSleeve: "visible",
-                showShortSleeve: "visible"
-        }
-}
-
-    
-    render () {
-        const skintone = this.props.skintone;
-        const colorClothes = this.props.colorClothes;
-        const pantsColor = this.props.pantsColor;
-        const showLongSleeve = this.props.showLongSleeve;
-        const showShortSleeve = this.props.showShortSleeve;
+const  Model = (props) => {
 
         return (
         <div className="user" >
         <div className="person" id="person">
-            <div className="head" style={{backgroundColor: skintone}}>
-                <div className="neck" style={{backgroundColor: skintone}}></div>
+            <div className="head" style={{backgroundColor: props.skintone}}>
+                <div className="neck" style={{backgroundColor: props.skintone}}></div>
             </div>
-            <div className="body" style={{backgroundColor: skintone}}>
-              <div className="top" style={{backgroundColor: skintone}}></div>
-              <div className="collar" style={{backgroundColor: colorClothes}}></div>
-              <div className="left-arm" style={{backgroundColor: skintone}}>
-                <div className="left-hand" style={{backgroundColor: skintone}}></div>
+            <div className="body" style={{backgroundColor: props.skintone}}>
+              <div className="top" style={{backgroundColor: props.skintone}}></div>
+              <div className="collar" style={{backgroundColor: props.clothes.shirt.color}}></div>
+              <div className="left-arm" style={{backgroundColor: props.skintone}}>
+                <div className="left-hand" style={{backgroundColor: props.skintone}}></div>
               </div>
-              <div className="right-arm" style={{backgroundColor: skintone}}>
-                <div className="right-hand" style={{backgroundColor: skintone}}></div>
+              <div className="right-arm" style={{backgroundColor: props.skintone}}>
+                <div className="right-hand" style={{backgroundColor: props.skintone}}></div>
               </div>
-              <div className="shirt" style={{backgroundColor: colorClothes}}>
-                <div className="left-short-sleeve" style={{backgroundColor: colorClothes, visibility: showShortSleeve}}></div>
-                <div className="left-long-sleeve" style={{backgroundColor: colorClothes, visibility: showLongSleeve}}></div>
-                <div className="right-long-sleeve" style={{backgroundColor: colorClothes, visibility: showLongSleeve}}></div>
-                <div className="right-short-sleeve" style={{backgroundColor: colorClothes, visibility: showShortSleeve}}></div>
+              <div className="shirt" style={{backgroundColor: props.clothes.shirt.color}}>
+                <div className="left-short-sleeve" style={{backgroundColor: props.clothes}}></div>
+                <div className="left-long-sleeve" style={{backgroundColor: props.clothes}}></div>
+                <div className="right-long-sleeve" style={{backgroundColor: props.clothes}}></div>
+                <div className="right-short-sleeve" style={{backgroundColor: props.clothes}}></div>
               </div>
             </div>
-            <div className="waist" style={{backgroundColor: pantsColor}}></div>
+            <div className="waist" style={{backgroundColor: props.clothes.pants.color}}></div>
             <div className="legs">
-              <div className="leg left" style={{backgroundColor: pantsColor}}>
-                <div className="foot" style={{backgroundColor: skintone}}></div>
-                <div className="shoe" style={{backgroundColor: this.state.shoesColor}}></div>
+              <div className="leg left" style={{backgroundColor: props.clothes.pants.color}}>
+                <div className="foot" style={{backgroundColor: props.skintone}}></div>
+                <div className="shoe" style={{backgroundColor: props.clothes.shoes.color}}></div>
               </div>
-              <div className="leg right" style={{backgroundColor: pantsColor}}>
-                <div className="foot" style={{backgroundColor: skintone}}></div>
-                <div className="shoe" style={{backgroundColor: this.state.shoesColor}}></div>
+              <div className="leg right" style={{backgroundColor: props.clothes.pants.color}}>
+                <div className="foot" style={{backgroundColor: props.skintone}}></div>
+                <div className="shoe" style={{backgroundColor: props.clothes.shoes.color}}></div>
               </div>
             </div>
         </div>
     </div>
         );
-    }
 }
 
+const mapStateToProps = state => {
+  return {
+    skintone: state.skintone,
+    clothes: state.clothes
+  }
+}
 
-export default Model;
+export default connect(mapStateToProps)(Model);

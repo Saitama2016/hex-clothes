@@ -1,19 +1,24 @@
-import React from 'react';
-import { selectSkintone } from '../../actions';
+import React, { Component } from 'react';
 import { Circle } from 'react-color'
+import { connect } from 'react-redux';
 import swatches from '../../colors';
 
-function SelectSkintone(props) {
+const flattenSkintones = (groups) => {
+    let arr = Object.keys(groups).map((group) => 
+      Object.values(groups[group]))
+    let newArray = [].concat.apply([], arr);
+    return newArray
+}
 
-    this.props.dispatch(selectSkintone)
+const SelectSkintone = () => {
+    
         return (
             <div>
                 <Circle 
-                    colors
-                    onChange
+                    colors={flattenSkintones(swatches.skintones)}
                 />
             </div>
-        );
+        );    
 }
 
 const mapStateToProps = state => ({
