@@ -4,15 +4,15 @@ import {connect} from 'react-redux';
 import  SelectSkintone from './skintones';
 
 
-const OutFitForm = (props) => {
+const OutFitForm = () => {
         return (
             <form style={{margin: "10px 0px 0px 0px"}}>
                 <label>Select Skintone:</label>
                 <SelectSkintone 
                 />
 
-                {/* <ClothesPicker
-                    /> */}
+                <ClothesPicker
+                    />
             <br />
             <button 
                 type="submit"
@@ -24,10 +24,5 @@ const OutFitForm = (props) => {
         );
 }
 
-const mapStateToProps = state => {
-    openForm: state.openForm;
-    skintone: state.skintone;
-    clothes: state.clothes;
-}
 
-export default connect(mapStateToProps)(OutFitForm);
+export default connect()(OutFitForm);

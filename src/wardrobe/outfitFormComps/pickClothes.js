@@ -1,10 +1,9 @@
 import React from 'react';
-import { Circle } from 'react-color';
+import { CirclePicker } from 'react-color';
 import SelectColorShirt from './selectShirtColor';
 import {connect} from 'react-redux';
 
-export class ClothesPicker extends React.Component {
-    render () {
+const ClothesPicker = () => {
         const center = {
             width: "240px",
             display: "flex",
@@ -24,8 +23,8 @@ export class ClothesPicker extends React.Component {
                 {/* Customize colors for Skintones and reset color when Skintone changes */}
                 <div style = { center }>
                 {/* Colors will be based on skin tone */}
-                <SelectColorShirt
-                />
+                {/* <SelectColorShirt
+                /> */}
                 </div>
             {/* Include Pants Components */}
 
@@ -37,7 +36,7 @@ export class ClothesPicker extends React.Component {
                 </select>
 
                 <div style = { center }>
-                <Circle 
+                <CirclePicker 
                 />
                 </div>
                 {/* Include Shoes Component */}
@@ -48,8 +47,7 @@ export class ClothesPicker extends React.Component {
                 </select>
             </div>
         );
-    }
 }
 
 
-export default connect(ClothesPicker);
+export default connect()(ClothesPicker);

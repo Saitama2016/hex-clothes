@@ -21,7 +21,7 @@ const initialState = {
 };
 
 export default (state = initialState, action) => {
-    if (action.type === actions.SELECT_SKINTONE) {
+    if (action.type === actions.PICK_A_SKINTONE) {
         if (state.skintone === null) {
             return Object.assign({}, state, {
                 showForm: false,
@@ -49,10 +49,6 @@ export default (state = initialState, action) => {
                 skintone: state.skintone,
             })
         }
-    }
-
-    if(action.type === actions.CHANGE_SHIRT_TYPE) {
-
     }
 
     return state

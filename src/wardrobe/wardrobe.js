@@ -12,7 +12,7 @@ const Wardrobe = () => {
             <section>
                 <Model />
                 <br />
-                {/* <OutFitForm /> */}
+                <OutFitForm />
             </section>
             <h3>Checkout your previous Outfits</h3>
             <section>

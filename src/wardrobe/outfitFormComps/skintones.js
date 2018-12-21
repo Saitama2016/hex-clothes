@@ -1,7 +1,9 @@
-import React, { Component } from 'react';
-import { Circle } from 'react-color'
-import { connect } from 'react-redux';
+import React from 'react';
+import { CirclePicker } from 'react-color'
+import {connect} from 'react-redux';
 import swatches from '../../colors';
+
+import { pickASkintone } from '../../actions';
 
 const flattenSkintones = (groups) => {
     let arr = Object.keys(groups).map((group) => 
@@ -10,12 +12,23 @@ const flattenSkintones = (groups) => {
     return newArray
 }
 
-const SelectSkintone = () => {
-    
+const center = {
+    width: "250px",
+    display: "flex",
+    margin: "20px auto"
+}
+
+const SelectSkintone = ({ dispatch }) => {
+
         return (
-            <div>
-                <Circle 
+            <div style={center}>
+                <CirclePicker 
                     colors={flattenSkintones(swatches.skintones)}
+                    onChange={e => {
+                        e.preventDefault()
+                        console.log(e.target.value)
+                        dispatch(pickASkintone(e.target.value))
+                    }}
                 />
             </div>
         );    
