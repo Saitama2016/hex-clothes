@@ -1,18 +1,23 @@
 import React from 'react';
 import {connect} from 'react-redux';
+import { CirclePicker } from 'react-color';
+import swatches from '../../colors';
 
-export function SelectColorShirt(props) {
+const flattenShirtColors = (groups) => {
+    let arr = Object.keys(groups).map((group) => 
+        Object.values(groups[group])
+    )
+
+    return arr[0]
+}
+
+const SelectShirtColor = (props) => {
 
         return (
             <div>
-                <select value={props.colorClothes}>
-                    <option value="white">Select Color Shirt</option>
-                    <option value="blue">Blue</option>
-                    <option value="red">Red</option>
-                    <option value="gold">Gold</option>
-                    <option value="purple">Purple</option>
-                    <option value="green">Green</option>
-                </select>
+                <CirclePicker 
+                colors={flattenShirtColors(swatches.shirtColors)}
+                />
             </div>
         );
 }
@@ -21,4 +26,4 @@ const mapStateToProps = state => ({
     colorClothes: state.colorClothes
 })
 
-export default connect(mapStateToProps)(SelectColorShirt);
+export default connect(mapStateToProps)(SelectShirtColor);

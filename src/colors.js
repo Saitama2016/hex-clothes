@@ -27,6 +27,7 @@ const COLORS = {
     "Royal Purple": "#7851A9",
     "Emerald Green": "#50C878",
     "Sapphire Blue": "#0F52BA",
+    "Brown": "#A52A2A",
     "Tan": "#D2B48C",
     "Yellow": "#FFFF00",
     "Green": "#008000",
@@ -41,7 +42,17 @@ const COLORS = {
     "Cyan": "#00FFFF",
     "Peach": "#FFDAB9",
     "Lavender": "#E6E6FA",
-    "Beige": "#F5F5DC"
+    "Beige": "#F5F5DC",
+    "Denim": "#1560bd",
+    "Ford Blue": "#343F51",
+    "Dark Imperial": "#00416A",
+    "Ateneo Blue": "#003A6C",
+    "Rich Black": "#010b13",
+    "Light Gray": "#D3D3D3",
+    "Mocha": "#A38068",
+    "Camel": "#C19A6B",
+    "Light Taupe": "#B38B6D",
+    "Charcoal": "#36454F"
 }
 
 const swatches = {
@@ -110,7 +121,57 @@ const swatches = {
             "Cream": COLORS["Cream"],
             "Navy Blue": COLORS["Navy Blue"],
             "Olive Green": COLORS["Olive Green"]
+        }
+    },
+    pantsColors: {
+        jeansShades: {
+            "Black": COLORS["Black"],
+            "Rich Black": COLORS["Rich Black"],
+            "Navy Blue": COLORS["Navy Blue"],
+            "Dark Imperial": COLORS["Dark Imperial"],
+            "Blue": COLORS["Blue"],
+            "Ford Blue": COLORS["Ford Blue"],
+            "Denim": COLORS["Denim"],
+            "Ateneo Blue": COLORS["Ateneo Blue"]
         },
+        khakisShades: {
+            "Khaki": COLORS["Khaki"],
+            "Tan": COLORS["Tan"],
+            "Brown": COLORS["Brown"],
+            "Beige": COLORS["Beige"],
+            "Cream": COLORS["Cream"],
+            "Camel": COLORS["Camel"],
+            "Light Taupe": COLORS["Light Taupe"],
+            "Olive Green": COLORS["Olive Green"],
+            "Light Gray": COLORS["Light Gray"],
+            "Charcoal": COLORS["Charcoal"]
+        },
+        chinosShades: {
+            "Black": COLORS["Black"],
+            "Light Gray": COLORS["Light Gray"],
+            "Navy Blue": COLORS["Navy Blue"],
+            "Blue": COLORS["Blue"],
+            "Light Blue": COLORS["Light Blue"],
+            "Tan": COLORS["Tan"],
+            "Cream": COLORS["Cream"],
+            "Beige": COLORS["Beige"],
+            "Peach": COLORS["Peach"],
+            "Crimson": COLORS["Crimson"]
+        },
+        dressPantsShades: {
+            "Black": COLORS["Black"],
+            "Navy Blue": COLORS["Navy Blue"],
+            "Gray": COLORS["Gray"],
+            "Light Gray": COLORS["Light Gray"]
+        }
+    },
+    shoeColors: {
+        bootShades: {
+            "Black": COLORS["Black"],
+            "White": COLORS["White"],
+            "Brown": COLORS["Brown"],
+            "Tan": COLORS["Tan"]
+        }
     }
 }
 

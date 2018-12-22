@@ -1,7 +1,11 @@
 import React from 'react';
-import { CirclePicker } from 'react-color';
-import SelectColorShirt from './selectShirtColor';
 import {connect} from 'react-redux';
+import SelectShirtType from './selectShirtType';
+import SelectShirtColor from './selectShirtColor';
+import SelectPantsType from './selectPantsType';
+import SelectPantsColor from './selectPantsColor';
+import SelectShoesType from './selectShoesType';
+import SelectShoesColor from './selectShoesColor';
 
 const ClothesPicker = () => {
         const center = {
@@ -12,42 +16,29 @@ const ClothesPicker = () => {
             justifyContent: "center",
             touchAction: "none"
         }
-
         return (
             <div className="clothingOptions">
-                <select>
-                    <option value="long-sleeve-shirt">Long Sleeve Shirt</option>
-                    <option value="t-shirt">T-shirt</option>
-                    <option value="tank-top">Tank Top</option>
-                </select>
+                <SelectShirtType />
                 {/* Customize colors for Skintones and reset color when Skintone changes */}
                 <div style = { center }>
                 {/* Colors will be based on skin tone */}
-                {/* <SelectColorShirt
-                /> */}
-                </div>
-            {/* Include Pants Components */}
-
-                <select value="jeans">
-                    <option value="jeans">Jeans</option>
-                    <option value="chinos">Chinos</option>
-                    <option value="khakis">Khakis</option>
-                    <option value="dress-pants">Dress Pants</option>
-                </select>
-
-                <div style = { center }>
-                <CirclePicker 
+                <SelectShirtColor
                 />
                 </div>
-                {/* Include Shoes Component */}
+            {/* Include Pants Components */}
+                <SelectPantsType />
 
-                <select value="shoes">
-                    <option value="shoes">Shoes</option>
-                    <option value="no-shoes">No Shoes</option>
-                </select>
+                <div style = { center }>
+                <SelectPantsColor />
+                </div>
+                {/* Include Shoes Component */}
+                <SelectShoesType />
+
+                <div style = { center }>
+                <SelectShoesColor />
+                </div>
             </div>
         );
 }
-
 
 export default connect()(ClothesPicker);

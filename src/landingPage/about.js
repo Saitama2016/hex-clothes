@@ -6,7 +6,7 @@ export function About() {
             <h3 className="App-intro">How to use HexClothes!</h3>
             <section>
                 <div className="step">
-                  <p>Step 1: Select your Skintone for your Avatar</p>
+                  <p>Step 1: Select the Skintone for your Model</p>
                   <img className="lightSkintones" src="https://htmlcolorcodes.com/assets/images/color-picker/html-color-codes-color-tints-eb0738d4.svg" alt="light skintones" />
                   <br></br>
                   <img className="darkSkintones" src="https://htmlcolorcodes.com/assets/images/color-picker/html-color-codes-color-shades-9d0efa0b.svg" alt="dark skintones" />
@@ -20,7 +20,7 @@ export function About() {
             </section>
             <section>
                 <div className="step">
-                  <p>Step 3: Select Color of Your Clothes!</p>
+                  <p>Step 3: Choose From Our Recommended Colors!</p>
                   <img className="colorWheel" src="https://www.sessions.edu/wp-content/themes/divi-child/color-calculator/wheel-3-rgb.png" alt="Color Wheel" />
                 </div>
             </section>

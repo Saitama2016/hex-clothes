@@ -1,19 +1,24 @@
-// import React from 'react';
-// import { connect } from 'react-redux';
-// import Circles from 'react-color';
+import React from 'react';
+import { connect } from 'react-redux';
+import { CirclePicker } from 'react-color';
+import swatches from '../../colors';
 
-// const selectColorPants = (props) => {
-    
-// }
+const flattenPantsColors = (groups) => {
+    let arr = Object.keys(groups).map((group) => 
+        Object.values(groups[group])
+    )
 
-// const ColorPants = () => {
-//     return (
-//         <div>
-//             <Circles 
-//                 onChange={selectColorPants}
-//             />
-//         </div>
-//     )
-// }
+    return arr[0]
+}
 
-// export default 
+const SelectPantsColor = () => {
+    return (
+        <div>
+            <CirclePicker
+                colors={flattenPantsColors(swatches.pantsColors)} 
+            />
+        </div>
+    )
+}
+
+export default connect()(SelectPantsColor)
