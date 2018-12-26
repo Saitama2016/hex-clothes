@@ -21,7 +21,8 @@ const initialState = {
 };
 
 export default (state = initialState, action) => {
-    if (action.type === actions.PICK_A_SKINTONE) {
+    if (action.type === actions.NEW_SKINTONE) {
+        console.log(action)
         if (state.skintone === null) {
             return Object.assign({}, state, {
                 showForm: false,

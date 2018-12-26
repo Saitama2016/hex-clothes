@@ -4,10 +4,10 @@ export const openForm = (showForm) => ({
     showForm
 });
 
-export const PICK_A_SKINTONE = 'PICK_A_SKINTONE';
-export const pickASkintone = (skintone) => ({
-    type: PICK_A_SKINTONE,
-    skintone
+export const NEW_SKINTONE = 'NEW_SKINTONE';
+export const newSkintone = (skintone) => ({
+    type: NEW_SKINTONE,
+    payload: skintone
 });
 
 export const CHANGE_SHIRT_COLOR = 'CHANGE_SHIRT_COLOR';
