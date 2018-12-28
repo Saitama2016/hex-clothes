@@ -24,7 +24,7 @@ const SelectSkintone = ({ dispatch }) => {
             <div style={center}>
                 <CirclePicker 
                     colors={flattenSkintones(swatches.skintones)}
-                    onChange={ (color) => newSkintone(color.hex) }
+                    onChange={ (color, event) => dispatch(newSkintone(color.hex)) }
                 />
             </div>
         );    

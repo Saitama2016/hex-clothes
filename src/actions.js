@@ -13,12 +13,13 @@ export const newSkintone = (skintone) => ({
 export const CHANGE_SHIRT_COLOR = 'CHANGE_SHIRT_COLOR';
 export const changeShirtColor = (clothes) => ({
     type: CHANGE_SHIRT_COLOR,
-    clothes
+    payload: clothes
 });
 
 export const CHANGE_SHIRT_TYPE = 'CHANGE_SHIRT_TYPE';
-export const changeShirtType = () => ({
-    type: CHANGE_SHIRT_TYPE
+export const changeShirtType = (clothes) => ({
+    type: CHANGE_SHIRT_TYPE,
+    payload: clothes
 });
 
 export const CHANGE_PANTS_COLOR = 'CHANGE_PANTS_COLOR';

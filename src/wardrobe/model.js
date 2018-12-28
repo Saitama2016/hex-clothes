@@ -20,10 +20,10 @@ const  Model = (props) => {
                 <div className="right-hand" style={{backgroundColor: props.skintone}}></div>
               </div>
               <div className="shirt" style={{backgroundColor: props.clothes.shirt.color}}>
-                <div className="left-short-sleeve" style={{backgroundColor: props.clothes}}></div>
-                <div className="left-long-sleeve" style={{backgroundColor: props.clothes}}></div>
-                <div className="right-long-sleeve" style={{backgroundColor: props.clothes}}></div>
-                <div className="right-short-sleeve" style={{backgroundColor: props.clothes}}></div>
+                <div className="left-short-sleeve" style={{backgroundColor: props.clothes.shirt.color, visibility: props.clothes.shirt.shortSleeveVisibility}}></div>
+                <div className="left-long-sleeve" style={{backgroundColor: props.clothes.shirt.color, visibility: props.clothes.shirt.longSleeveVisibility}}></div>
+                <div className="right-long-sleeve" style={{backgroundColor: props.clothes.shirt.color, visibility: props.clothes.shirt.longSleeveVisibility}}></div>
+                <div className="right-short-sleeve" style={{backgroundColor: props.clothes.shirt.color, visibility: props.clothes.shirt.shortSleeveVisibility}}></div>
               </div>
             </div>
             <div className="waist" style={{backgroundColor: props.clothes.pants.color}}></div>
