@@ -54,11 +54,12 @@ export default (state = initialState, action) => {
     }
 
     if (action.type === actions.CHANGE_SHIRT_TYPE){
-        if (action.payload === "Long Sleeve Shirt") {
+        console.log(action)
+        if (action.payload === "long-sleeve-shirt") {
             console.log("It works")
-        } else if (action.payload === "T-shirt") {
+        } else if (action.payload === "t-shirt") {
             console.log("It works too")
-        } else if (action.payload === "Tank Top") {
+        } else if (action.payload === "tank-top") {
             console.log("ME too")
         }
     }
@@ -67,13 +68,48 @@ export default (state = initialState, action) => {
         const newState = Object.assign({}, state)
         console.log(newState, action)
         newState.clothes.shirt.color = action.payload
-        return Object.assign({}, newState) 
+        return Object.assign({}, newState, {
+            clothes: {
+                shirt: {
+                    color: newState.clothes.shirt.color
+                },
+                pants: newState.clothes.pants,
+                shoes: newState.clothes.shoes
+            }
+        })
     }
 
     if (action.type === actions.CHANGE_PANTS_TYPE){}
-    if (action.type === actions.CHANGE_PANTS_COLOR){}
+
+    if (action.type === actions.CHANGE_PANTS_COLOR){
+        const newState = Object.assign({}, state)
+        newState.clothes.pants.color = action.payload
+        return Object.assign({}, newState, {
+            clothes: {
+                shirt: newState.clothes.shirt,
+                pants: {
+                    color: newState.clothes.pants.color 
+                },
+                shoes: newState.clothes.shoes
+            }
+        })
+    }
+
     if (action.type === actions.HIDE_SHOES){}
-    if (action.type === actions.CHANGE_SHOES_COLOR){}
+
+    if (action.type === actions.CHANGE_SHOES_COLOR){
+        const newState = Object.assign({}, state)
+        newState.clothes.shoes.color = action.payload
+        return Object.assign({}, newState, {
+            clothes: {
+                shirt: newState.clothes.shirt,
+                pants: newState.clothes.pants,
+                shoes: {
+                    color: newState.clothes.shoes.color
+                }
+            }
+        })
+    }
 
     return state
 }

@@ -1,7 +1,7 @@
 export const OPEN_FORM = 'OPEN_FORM';
 export const openForm = (showForm) => ({
     type: OPEN_FORM,
-    showForm
+    payload: showForm
 });
 
 export const NEW_SKINTONE = 'NEW_SKINTONE';
@@ -23,21 +23,25 @@ export const changeShirtType = (clothes) => ({
 });
 
 export const CHANGE_PANTS_COLOR = 'CHANGE_PANTS_COLOR';
-export const changePantsColor = () => ({
-    type: CHANGE_PANTS_COLOR
+export const changePantsColor = (clothes) => ({
+    type: CHANGE_PANTS_COLOR,
+    payload: clothes
 });
 
 export const CHANGE_PANTS_TYPE = 'CHANGE_PANTS_TYPE';
-export const changePantsType = () => ({
-    type: CHANGE_PANTS_TYPE
+export const changePantsType = (clothes) => ({
+    type: CHANGE_PANTS_TYPE,
+    payload: clothes
 });
 
 export const HIDE_SHOES = 'HIDE_SHOES';
-export const hideShoes = () => ({
-    type: HIDE_SHOES
+export const hideShoes = (clothes) => ({
+    type: HIDE_SHOES,
+    payload: clothes
 });
 
 export const CHANGE_SHOES_COLOR = 'CHANGE_SHOES_COLOR';
-export const changeShoesColor = () => ({
-    type: CHANGE_SHOES_COLOR
+export const changeShoesColor = (clothes) => ({
+    type: CHANGE_SHOES_COLOR,
+    payload: clothes
 });
