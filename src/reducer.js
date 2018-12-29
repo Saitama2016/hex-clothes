@@ -55,12 +55,47 @@ export default (state = initialState, action) => {
 
     if (action.type === actions.CHANGE_SHIRT_TYPE){
         console.log(action)
+        const newState = Object.assign({}, state)
+        newState.clothes.shirt.type = action.payload
         if (action.payload === "long-sleeve-shirt") {
-            console.log("It works")
+            return Object.assign({}, newState, {
+                clothes: {
+                    shirt: {
+                        color: newState.clothes.shirt.color,
+                        type: action.payload,
+                        shortSleeveVisibility: "hidden",
+                        longSleeveVisibility: "visible"
+                    },
+                    pants: newState.clothes.pants,
+                    shoes: newState.clothes.shoes
+                }
+            })
         } else if (action.payload === "t-shirt") {
-            console.log("It works too")
+            return Object.assign({}, newState, {
+                clothes: {
+                    shirt: {
+                        color: newState.clothes.shirt.color,
+                        type: action.payload,
+                        shortSleeveVisibility: "visible",
+                        longSleeveVisibility: "hidden"
+                    },
+                    pants: newState.clothes.pants,
+                    shoes: newState.clothes.shoes
+                }
+            })
         } else if (action.payload === "tank-top") {
-            console.log("ME too")
+            return Object.assign({}, newState, {
+                clothes: {
+                    shirt: {
+                        color: newState.clothes.shirt.color,
+                        type: action.payload,
+                        shortSleeveVisibility: "hidden",
+                        longSleeveVisibility: "hidden"
+                    },
+                    pants: newState.clothes.pants,
+                    shoes: newState.clothes.shoes
+                }
+            })
         }
     }
 
@@ -71,7 +106,10 @@ export default (state = initialState, action) => {
         return Object.assign({}, newState, {
             clothes: {
                 shirt: {
-                    color: newState.clothes.shirt.color
+                    color: newState.clothes.shirt.color,
+                    type: newState.clothes.shirt.type,
+                    shortSleeveVisibility: newState.clothes.shirt.shortSleeveVisibility,
+                    longSleeveVisibility: newState.clothes.shirt.longSleeveVisibility
                 },
                 pants: newState.clothes.pants,
                 shoes: newState.clothes.shoes
