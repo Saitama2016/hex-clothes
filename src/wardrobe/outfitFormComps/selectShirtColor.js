@@ -8,12 +8,21 @@ const flattenShirtColors = (groups) => {
     let arr = Object.keys(groups).map((group) => 
         Object.values(groups[group])
     )
-
-    return arr[0]
+    return arr[1]
 }
 
-const SelectShirtColor = ({ dispatch }) => {
-
+const SelectShirtColor = ({dispatch}) => {
+    // const flattenShirtColors = (groups) => {
+    //     console.log(props.skintone)
+    //     let arr = Object.keys(groups).map((group) => 
+    //         Object.values(groups[group])
+    //     )
+    //     if (props.skintone === "#ffdbac") {
+    //         return arr[2]
+    //     } else {
+    //         return arr[0]
+    //     }
+    // }
         return (
             <div>
                 <CirclePicker 
@@ -25,6 +34,7 @@ const SelectShirtColor = ({ dispatch }) => {
 }
 
 const mapStateToProps = state => ({
+    skintone: state.skintone,
     clothes: state.clothes
 })
 

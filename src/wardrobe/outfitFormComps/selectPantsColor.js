@@ -9,7 +9,7 @@ const flattenPantsColors = (groups) => {
         Object.values(groups[group])
     )
 
-    return arr[0]
+    return arr[1]
 }
 
 const SelectPantsColor = ({ dispatch }) => {

@@ -23,17 +23,23 @@ const COLORS = {
     "Light Blue": "#ADD8E6",
     "Orange": "#FFA500",
     "Pink": "#FFC0CB",
+    "Blush Pink": "#FE828C",
+    "Coral Pink": "#F88379",
     "Gold": "#FFDF00",
     "Royal Purple": "#7851A9",
-    "Emerald Green": "#50C878",
+    "Mint Green": "#98FF98",
+    "Seafoam Green": "#71EEB8",
     "Sapphire Blue": "#0F52BA",
     "Brown": "#A52A2A",
     "Tan": "#D2B48C",
     "Yellow": "#FFFF00",
+    "Light Yellow": "#FFFF33",
     "Green": "#008000",
     "Blue": "#0000FF",
+    "Light Sky Blue": "#87CEFA",
     "Cream": "#FFFDD0",
     "Black": "#000000",
+    "Ivory": "#FFFFF0",
     "Navy Blue": "#000080",
     "Olive Green": "#BAB86C",
     "Crimson": "#DC143C",
@@ -44,7 +50,7 @@ const COLORS = {
     "Lavender": "#E6E6FA",
     "Beige": "#F5F5DC",
     "Denim": "#1560bd",
-    "Ford Blue": "#343F51",
+    "Ford Blue": "#1351D8",
     "Dark Imperial": "#00416A",
     "Ateneo Blue": "#003A6C",
     "Rich Black": "#010b13",
@@ -81,46 +87,46 @@ const swatches = {
     },
     shirtColors: {
         group1: {
-            "White": COLORS["White"],
-            "Khaki": COLORS["Khaki"],
-            "Eggplant": COLORS["Eggplant"],
+            "Sapphire Blue": COLORS["Sapphire Blue"],
             "Red": COLORS["Red"],
-            "Gray": COLORS["Gray"],
-            "Light Blue": COLORS["Light Blue"],
             "Orange": COLORS["Orange"],
-            "Pink": COLORS["Pink"],
             "Gold": COLORS["Gold"],
+            "Eggplant": COLORS["Eggplant"],
             "Royal Purple": COLORS["Royal Purple"],
-            "Emerald Green": COLORS["Emerald Green"],
-            "Sapphire Blue": COLORS["Sapphire Blue"]
+            "Gray": COLORS["Gray"],
+            "Khaki": COLORS["Khaki"],
+            "Pink": COLORS["Pink"],
+            "Light Blue": COLORS["Light Blue"],
+            "Mint Green": COLORS["Mint Green"],
+            "White": COLORS["White"]
         },
         group2: {
             "Black": COLORS["Black"],
-            "Brown": COLORS["Brown"],
-            "Tan": COLORS["Tan"],
-            "Khaki": COLORS["Khaki"],
-            "Yellow": COLORS["Yellow"],
-            "Green": COLORS["Green"],
             "Gray": COLORS["Gray"],
-            "Orange": COLORS["Orange"],
-            "Blue": COLORS["Blue"],
-            "Cream": COLORS["Cream"],
             "Navy Blue": COLORS["Navy Blue"],
+            "Crimson": COLORS["Crimson"],
+            "Brown": COLORS["Brown"],
+            "Yellow": COLORS["Yellow"],
+            "Orange": COLORS["Orange"],
+            "Green": COLORS["Green"],
+            "Tan": COLORS["Tan"],
+            "Cream": COLORS["Cream"],
+            "Khaki": COLORS["Khaki"],
             "Olive Green": COLORS["Olive Green"]
         },
         group3: {
             "Black": COLORS["Black"],
-            "Brown": COLORS["Brown"],
+            "Light Yellow": COLORS["Light Yellow"],
             "Tan": COLORS["Tan"],
             "Khaki": COLORS["Khaki"],
-            "Yellow": COLORS["Yellow"],
-            "Green": COLORS["Green"],
-            "Gray": COLORS["Gray"],
-            "Orange": COLORS["Orange"],
-            "Blue": COLORS["Blue"],
-            "Cream": COLORS["Cream"],
-            "Navy Blue": COLORS["Navy Blue"],
-            "Olive Green": COLORS["Olive Green"]
+            "Ivory": COLORS["Ivory"],
+            "Coral Pink": COLORS["Coral Pink"],
+            "Blush Pink": COLORS["Blush Pink"],
+            "Peach": COLORS["Peach"],
+            "Lavender": COLORS["Lavender"],
+            "Light Sky Blue": COLORS["Light Sky Blue"],
+            "Seafoam Green": COLORS["Seafoam Green"],
+            "Mint Green": COLORS["Mint Green"]
         }
     },
     pantsColors: {
@@ -128,11 +134,11 @@ const swatches = {
             "Black": COLORS["Black"],
             "Rich Black": COLORS["Rich Black"],
             "Navy Blue": COLORS["Navy Blue"],
-            "Dark Imperial": COLORS["Dark Imperial"],
             "Blue": COLORS["Blue"],
-            "Ford Blue": COLORS["Ford Blue"],
+            "Ateneo Blue": COLORS["Ateneo Blue"],
+            "Dark Imperial": COLORS["Dark Imperial"],
             "Denim": COLORS["Denim"],
-            "Ateneo Blue": COLORS["Ateneo Blue"]
+            "Ford Blue": COLORS["Ford Blue"]
         },
         khakisShades: {
             "Khaki": COLORS["Khaki"],
@@ -168,9 +174,9 @@ const swatches = {
     shoeColors: {
         bootShades: {
             "Black": COLORS["Black"],
-            "White": COLORS["White"],
             "Brown": COLORS["Brown"],
-            "Tan": COLORS["Tan"]
+            "Tan": COLORS["Tan"],
+            "White": COLORS["White"]
         }
     }
 }

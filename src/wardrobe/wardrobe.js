@@ -25,7 +25,6 @@ const Wardrobe = () => {
 
 const mapStateToProps = state => {
     return {
-        openForm: state.openForm,
         skintone: state.skintone,
         clothes: state.clothes
     }

@@ -1,9 +1,3 @@
-export const OPEN_FORM = 'OPEN_FORM';
-export const openForm = (showForm) => ({
-    type: OPEN_FORM,
-    payload: showForm
-});
-
 export const NEW_SKINTONE = 'NEW_SKINTONE';
 export const newSkintone = (skintone) => ({
     type: NEW_SKINTONE,

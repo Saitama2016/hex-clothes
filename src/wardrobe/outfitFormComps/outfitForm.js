@@ -24,5 +24,9 @@ const OutFitForm = () => {
         );
 }
 
+const mapStateToProps = (state) => ({
+    skintone: state.skintone,
+    clothes: state.clothes
+})
 
-export default connect()(OutFitForm);
+export default connect(mapStateToProps)(OutFitForm);

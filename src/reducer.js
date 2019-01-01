@@ -1,7 +1,6 @@
 import * as actions from './actions';
 
 const initialState = {
-    showForm: false,
     skintone: "#C68642",
     clothes: {
         shirt: {
@@ -24,37 +23,12 @@ const initialState = {
 
 export default (state = initialState, action) => {
     if (action.type === actions.NEW_SKINTONE) {
-        if (state.skintone === null) {
             return Object.assign({}, state, {
-                showForm: false,
-                skintone: "#C68642",
-                clothes: {
-                    shirt: {
-                        color: "#FFF",
-                        type: "long-sleeve-shirt",
-                    },
-                    pants: {
-                        color: "#1560BD",
-                        type: "jeans"
-                    },
-                    shoes: {
-                        show: true,
-                        color: "#000",
-                        type: "leather"
-                    }
-                },
+                skintone: action.payload
             })
-        }
-        else {
-            return Object.assign({}, state, {
-                showForm: true,
-                skintone: action.payload,
-            })
-        }
     }
 
     if (action.type === actions.CHANGE_SHIRT_TYPE){
-        console.log(action)
         const newState = Object.assign({}, state)
         newState.clothes.shirt.type = action.payload
         if (action.payload === "long-sleeve-shirt") {
@@ -101,7 +75,6 @@ export default (state = initialState, action) => {
 
     if (action.type === actions.CHANGE_SHIRT_COLOR){
         const newState = Object.assign({}, state)
-        console.log(newState, action)
         newState.clothes.shirt.color = action.payload
         return Object.assign({}, newState, {
             clothes: {
@@ -126,7 +99,8 @@ export default (state = initialState, action) => {
             clothes: {
                 shirt: newState.clothes.shirt,
                 pants: {
-                    color: newState.clothes.pants.color 
+                    color: newState.clothes.pants.color,
+                    type: newState.clothes.pants.type
                 },
                 shoes: newState.clothes.shoes
             }
