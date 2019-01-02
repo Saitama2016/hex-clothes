@@ -4,15 +4,36 @@ import { CirclePicker } from 'react-color';
 import swatches from '../../colors';
 import { changePantsColor } from '../../actions';
 
-const flattenPantsColors = (groups) => {
-    let arr = Object.keys(groups).map((group) => 
-        Object.values(groups[group])
-    )
+// const flattenPantsColors = (groups) => {
+//     let arr = Object.keys(groups).map((group) => 
+//         Object.values(groups[group])
+//     )
 
-    return arr[1]
-}
+//     return arr[1]
+// }
 
-const SelectPantsColor = ({ dispatch }) => {
+const SelectPantsColor = ({ clothes, dispatch }) => {
+
+    const flattenPantsColors = (groups) => {
+        let arr = Object.keys(groups).map((group) => 
+            Object.values(groups[group])
+        )
+        let pantsType = clothes.pants.type
+
+        if (pantsType === 'jeans') {
+            return arr[0]
+        } else if (pantsType === 'khakis') {
+            return arr[1]
+        } else if (pantsType === 'chinos') {
+            return arr[2]
+        } else if (pantsType === 'dress-pants') {
+            return arr[3]
+        } else {
+            return arr[0]
+        }
+    }
+
+
     return (
         <div>
             <CirclePicker
@@ -23,4 +44,8 @@ const SelectPantsColor = ({ dispatch }) => {
     )
 }
 
-export default connect()(SelectPantsColor)
+const mapStateToProps = (state) => ({
+    clothes: state.clothes
+})
+
+export default connect(mapStateToProps)(SelectPantsColor)

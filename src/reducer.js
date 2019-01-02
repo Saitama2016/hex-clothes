@@ -90,7 +90,20 @@ export default (state = initialState, action) => {
         })
     }
 
-    if (action.type === actions.CHANGE_PANTS_TYPE){}
+    if (action.type === actions.CHANGE_PANTS_TYPE){
+        const newState = Object.assign({}, state)
+        newState.clothes.pants.type = action.payload
+        return Object.assign({}, newState, {
+            clothes: {
+                shirt: newState.clothes.shirt,
+                pants: {
+                    color: newState.clothes.pants.type,
+                    type: action.payload
+                },
+                shoes: newState.clothes.shoes
+            }
+        })
+    }
 
     if (action.type === actions.CHANGE_PANTS_COLOR){
         const newState = Object.assign({}, state)
@@ -99,7 +112,7 @@ export default (state = initialState, action) => {
             clothes: {
                 shirt: newState.clothes.shirt,
                 pants: {
-                    color: newState.clothes.pants.color,
+                    color: action.payload,
                     type: newState.clothes.pants.type
                 },
                 shoes: newState.clothes.shoes

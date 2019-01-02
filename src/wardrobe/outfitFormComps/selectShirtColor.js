@@ -4,25 +4,36 @@ import { CirclePicker } from 'react-color';
 import swatches from '../../colors';
 import { changeShirtColor } from '../../actions';
 
-const flattenShirtColors = (groups) => {
-    let arr = Object.keys(groups).map((group) => 
-        Object.values(groups[group])
-    )
-    return arr[1]
-}
+const SelectShirtColor = ({skintone, dispatch}) => {
+    let selectedGroup;
 
-const SelectShirtColor = ({dispatch}) => {
-    // const flattenShirtColors = (groups) => {
-    //     console.log(props.skintone)
-    //     let arr = Object.keys(groups).map((group) => 
-    //         Object.values(groups[group])
-    //     )
-    //     if (props.skintone === "#ffdbac") {
-    //         return arr[2]
-    //     } else {
-    //         return arr[0]
-    //     }
-    // }
+    const flattenShirtColors = (groups) => {
+
+        Object.keys(swatches.skintones).some(function (group) {
+           return Object.keys(swatches.skintones[group]).some(function (color) {
+                if (skintone === swatches.skintones[group][color]) {
+                    selectedGroup = group
+                    return true
+                } else {
+                    return false
+                }
+            })
+        })
+
+        let arr = Object.keys(groups).map((group) => 
+            Object.values(groups[group])
+        )
+
+        if (selectedGroup === "group1") {
+            return arr[0]
+        } else if (selectedGroup === "group2") {
+            return arr[1]
+        } else if (selectedGroup === "group3") {
+            return arr[2]
+        } else {
+            return arr[0]
+        }
+    }
         return (
             <div>
                 <CirclePicker 
@@ -35,7 +46,7 @@ const SelectShirtColor = ({dispatch}) => {
 
 const mapStateToProps = state => ({
     skintone: state.skintone,
-    clothes: state.clothes
+    // clothes: state.clothes
 })
 
 export default connect(mapStateToProps)(SelectShirtColor);
