@@ -1,8 +1,9 @@
 import React from 'react';
+import './registerForm.css';
 
 export default function signUp() {
     return (
-        <div>
+        <div className="signUpPage">
             <h3>Just 1 step away!</h3>
             <form className="signUpForm">
                 <fieldset>
@@ -25,7 +26,7 @@ export default function signUp() {
                 </fieldset>
             </form>
             <br />
-            <a href="login">Login</a>
+            <a href="login" className="switchToLogin"><p>Login</p></a>
         </div>
     );
 }

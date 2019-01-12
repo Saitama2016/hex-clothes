@@ -1,0 +1,16 @@
+.signUpPage {
+    padding-bottom: 30px;
+}
+
+.switchToLogin {
+    padding-bottom: 50px;
+}
+
+.switchToLogin p {
+    background: black;
+    width: 5.5rem;
+    height: 1.5rem;
+    border-radius: 20px;
+    font-size: 1rem;
+    margin: 10px auto;
+}

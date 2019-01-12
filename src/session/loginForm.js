@@ -15,7 +15,7 @@ export default function Login() {
                 <button className="loginButton" type="submit">Submit!</button>
                 </fieldset>
             </form>
-            <a href="signup"><p>Sign Up!</p></a>
+            <a href="signup" className="switchToSignUp"><p>Sign Up!</p></a>
         </div>
     );
 }

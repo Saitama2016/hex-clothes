@@ -26,4 +26,18 @@ button:hover, button:focus {
 
 fieldset{
     background-color: rgba(250, 250, 250, 1);
+    border: none;
+}
+
+.switchToSignUp {
+    padding-bottom: 50px;
+}
+
+.switchToSignUp p {
+    background: black;
+    width: 5.5rem;
+    height: 1.5rem;
+    border-radius: 20px;
+    font-size: 1rem;
+    margin: 10px auto;
 }
