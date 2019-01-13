@@ -5,7 +5,7 @@
 </p>
 
 <h2>Live Demo Coming Soon</h2>
-<a href="http://hex-clothes.herokuapp.com/" target="_blank">Frontend Example</a>
+<a href="https://hex-clothes.herokuapp.com/" target="_blank">Frontend Example</a>
 <a href="https://github.com/Saitama2016/hex-clothes-api" target="_blank">Backend API Link</a>
 
 <h2>Motivation</h2>
