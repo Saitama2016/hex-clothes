@@ -3,7 +3,7 @@ import { CirclePicker } from 'react-color'
 import {connect} from 'react-redux';
 import swatches from '../../colors';
 
-import { newSkintone } from '../../actions';
+import { newSkintone } from '../../actions/createOutfits';
 
 const flattenSkintones = (groups) => {
     let arr = Object.keys(groups).map((group) => 

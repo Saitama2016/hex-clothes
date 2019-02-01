@@ -2,7 +2,7 @@ import React from 'react';
 import {connect} from 'react-redux';
 import { CirclePicker } from 'react-color';
 import swatches from '../../colors';
-import { changeShoesColor } from '../../actions';
+import { changeShoesColor } from '../../actions/createOutfits';
 
 const flattenShoeColors = (groups) => {
     let arr = Object.keys(groups).map((group) =>
