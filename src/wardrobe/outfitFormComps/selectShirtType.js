@@ -1,6 +1,6 @@
 import React from 'react'
 import {connect} from 'react-redux';
-import { changeShirtType } from '../../actions';
+import { changeShirtType } from '../../actions/createOutfits';
 
 const SelectShirtType = ({ dispatch }) => {
     return (

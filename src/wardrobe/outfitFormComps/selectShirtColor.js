@@ -2,7 +2,7 @@ import React from 'react';
 import {connect} from 'react-redux';
 import { CirclePicker } from 'react-color';
 import swatches from '../../colors';
-import { changeShirtColor } from '../../actions';
+import { changeShirtColor } from '../../actions/createOutfits';
 
 const SelectShirtColor = ({skintone, dispatch}) => {
     let selectedGroup;
