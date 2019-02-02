@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 
 
 const  Model = (props) => {
-
+  // Give credit to the author of the User I took inspiration from
         return (
         <div className="user" >
         <div className="person" id="person">
