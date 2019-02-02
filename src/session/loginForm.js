@@ -1,5 +1,8 @@
 import React from 'react';
 import './loginForm.css';
+import {fetchUserProfile} from '../actions/users';
+
+// Make function to GET User Info on Submit
 
 export default function Login() {
     return (
