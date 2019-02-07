@@ -3,7 +3,7 @@ import { shallow } from 'enzyme';
 
 import SelectShirtColor from './selectShirtColor';
 
-describe('<SelectShirtColor />', () => {
+describe.skip('<SelectShirtColor />', () => {
     it('Renders without crashing', () => {
         shallow(<SelectShirtColor />)
     })
