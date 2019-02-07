@@ -1,9 +1,12 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import {mount} from 'enzyme';
 import App from './App';
+import { TopNav } from './landingPage/topNav';
 
-it('renders without crashing', () => {
-  const div = document.createElement('div');
-  ReactDOM.render(<App />, div);
-  ReactDOM.unmountComponentAtNode(div);
+it.only('renders without crashing', () => {
+  const wrapper = mount(<App />);
+  // Test if App renders Top Navigation Bar
+  expect(wrapper.find(<TopNav />).exists()).to.equal(true);
+  // Test if App renders Side Navigation Bar
+  // Test if App renders Routers
 });
