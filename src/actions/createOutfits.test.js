@@ -18,7 +18,7 @@ describe('newSkintone', () => {
         const skintone = "#C68642";
         const action = newSkintone(skintone);
         expect(action.type).toEqual(NEW_SKINTONE);
-        expect(action.skintone).toEqual(skintone);
+        expect(action.payload).toEqual(skintone);
     })
 })
 
@@ -27,7 +27,7 @@ describe('changeShirtColor', () => {
         const shirtColor = "#FFF";
         const action = changeShirtColor(shirtColor);
         expect(action.type).toEqual(CHANGE_SHIRT_COLOR);
-        expect(action.shirtColor).toEqual(shirtColor);
+        expect(action.payload).toEqual(shirtColor);
     })
 })
 
@@ -36,7 +36,7 @@ describe('changeShirtType', () => {
         const shirtType = "long-sleeve-shirt";
         const action = changeShirtType(shirtType);
         expect(action.type).toEqual(CHANGE_SHIRT_TYPE);
-        expect(action.shirtType).toEqual(shirtType);
+        expect(action.payload).toEqual(shirtType);
     })
 })
 
@@ -45,7 +45,7 @@ describe('changePantsColor', () => {
         const pantsColor = "#1560BD";
         const action = changePantsColor(pantsColor);
         expect(action.type).toEqual(CHANGE_PANTS_COLOR);
-        expect(action.changePantsColor).toEqual(pantsColor);
+        expect(action.payload).toEqual(pantsColor);
     })
 })
 
@@ -54,7 +54,7 @@ describe('changePantsType', () => {
         const pantsType = "jeans";
         const action = changePantsType(pantsType);
         expect(action.type).toEqual(CHANGE_PANTS_TYPE);
-        expect(action.changePantsType).toEqual(pantsType);
+        expect(action.payload).toEqual(pantsType);
     })
 })
 
@@ -63,6 +63,6 @@ describe('changeShoesColor', () => {
         const shoesColor = "#000";
         const action = changeShoesColor(shoesColor);
         expect(action.type).toEqual(CHANGE_SHOES_COLOR);
-        expect(action.changeShoesColor).toEqual(shoesColor);
+        expect(action.payload).toEqual(shoesColor);
     })
 })
