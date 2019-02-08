@@ -1,5 +1,5 @@
 import reducer from './reducer';
-import * as actions from './actions/createOutfits';
+import { newSkintone } from './actions/createOutfits';
 
 describe.only('Reducer', () => {
     it('Should set the initial state when nothing is passed in', () => {
@@ -23,5 +23,14 @@ describe.only('Reducer', () => {
         expect(state).toBe(currentState);
     });
 
-    
+    describe('newSkintone', () => {
+        it('Should change to selected skintone', () => {
+            let state = {
+                skintone: "#C68642"
+            };
+            const skintone = "#AF6E51";
+            state = reducer(state, newSkintone(skintone));
+            expect(state.skintone).toEqual(skintone);
+        });
+    });
 })
