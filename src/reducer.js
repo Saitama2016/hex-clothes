@@ -14,9 +14,7 @@ const initialState = {
             type: "jeans"
         },
         shoes: {
-            show: true,
             color: "#000",
-            type: "leather"
         }
     },
 };
@@ -119,8 +117,6 @@ export default (state = initialState, action) => {
             }
         })
     }
-
-    if (action.type === actions.HIDE_SHOES){}
 
     if (action.type === actions.CHANGE_SHOES_COLOR){
         const newState = Object.assign({}, state)
