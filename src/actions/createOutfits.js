@@ -28,12 +28,6 @@ export const changePantsType = (clothes) => ({
     payload: clothes
 });
 
-export const HIDE_SHOES = 'HIDE_SHOES';
-export const hideShoes = (clothes) => ({
-    type: HIDE_SHOES,
-    payload: clothes
-});
-
 export const CHANGE_SHOES_COLOR = 'CHANGE_SHOES_COLOR';
 export const changeShoesColor = (clothes) => ({
     type: CHANGE_SHOES_COLOR,
