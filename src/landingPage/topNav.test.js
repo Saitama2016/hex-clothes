@@ -1,10 +1,10 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import Wardrobe from './wardrobe';
+import TopNav from './topNav';
 
-describe.skip('<Wardrobe />', () => {
+describe('<TopNav />', () => {
     it('Renders without crashing', () => {
-        shallow(<Wardrobe />);
+        shallow(<TopNav />);
     });
-})
+});
