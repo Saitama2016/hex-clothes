@@ -1,7 +1,7 @@
 import reducer from './reducer';
 import { newSkintone, changeShirtType, changeShirtColor, changePantsType, changePantsColor, changeShoesColor } from './actions/createOutfits';
 
-describe.only('Reducer', () => {
+describe('Reducer', () => {
     it('Should set the initial state when nothing is passed in', () => {
         const state = reducer(undefined, {type: '___UNKNOWN'});
 
