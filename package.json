@@ -23,6 +23,7 @@
   },
   "devDependencies": {
     "enzyme": "^3.5.1",
-    "react-test-renderer": "^16.4.2"
+    "react-test-renderer": "^16.4.2",
+    "redux-mock-store": "^1.5.3"
   }
 }
