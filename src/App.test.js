@@ -1,12 +1,17 @@
 import React from 'react';
-import {mount} from 'enzyme';
-import App from './App';
-import { TopNav } from './landingPage/topNav';
+import { shallow } from 'enzyme';
+import { Provider } from 'react-redux';
+import configureMockStore from 'redux-mock-store';
 
-it.skip('renders without crashing', () => {
-  const wrapper = mount(<App />);
-  // Test if App renders Top Navigation Bar
-  expect(wrapper.find(<TopNav />).exists()).to.equal(true);
-  // Test if App renders Side Navigation Bar
-  // Test if App renders Routers
+import App from './App';
+
+const mockStore = configureMockStore();
+const store = mockStore({});
+
+describe('<App />', () => {
+    it('Render without crashing', () => {
+      shallow(<Provider store={store}>
+                <App />
+              </Provider>)
+    })
 });
