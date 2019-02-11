@@ -4,7 +4,6 @@ import SelectShirtType from './selectShirtType';
 import SelectShirtColor from './selectShirtColor';
 import SelectPantsType from './selectPantsType';
 import SelectPantsColor from './selectPantsColor';
-import SelectShoesType from './selectShoesType';
 import SelectShoesColor from './selectShoesColor';
 
 const ClothesPicker = () => {
@@ -32,8 +31,6 @@ const ClothesPicker = () => {
                 <SelectPantsColor />
                 </div>
                 {/* Include Shoes Component */}
-                <SelectShoesType />
-
                 <div style = { center }>
                 <SelectShoesColor />
                 </div>
