@@ -31,6 +31,7 @@ const ClothesPicker = () => {
                 <SelectPantsColor />
                 </div>
                 {/* Include Shoes Component */}
+                <label>Select Shoe Color:</label>
                 <div style = { center }>
                 <SelectShoesColor />
                 </div>
