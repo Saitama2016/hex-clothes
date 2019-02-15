@@ -1,4 +1,4 @@
-import * as actions from './actions/createOutfits';
+import * as actions from '../actions/createOutfits';
 
 const initialState = {
     skintone: "#C68642",
