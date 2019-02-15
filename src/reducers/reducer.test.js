@@ -1,5 +1,5 @@
 import reducer from './reducer';
-import { newSkintone, changeShirtType, changeShirtColor, changePantsType, changePantsColor, changeShoesColor } from './actions/createOutfits';
+import { newSkintone, changeShirtType, changeShirtColor, changePantsType, changePantsColor, changeShoesColor } from '../actions/createOutfits';
 
 describe('Reducer', () => {
     it('Should set the initial state when nothing is passed in', () => {
