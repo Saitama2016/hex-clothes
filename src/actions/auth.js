@@ -38,6 +38,12 @@ const storeAuthInfo = (authToken, dispatch) => {
     saveAuthToken(authToken);
 };
 
+// export const registerUsers = () => dispatch => {
+//     fetch(`${API_BASE_URL}/auth/register/`, {
+//         method: 'POST',
+//     })
+// }
+
 export const login = (username, password) => dispatch => {
     dispatch(authRequest());
     return (
