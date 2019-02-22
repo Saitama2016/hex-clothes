@@ -52,7 +52,6 @@ export const login = (username, password) => dispatch => {
             })
         })
         .then(res => normalizeResponseErrors(res))
-        .then(res => res.json())
         .then(({ authToken }) => storeAuthInfo(authToken, dispatch))
         .catch(err => {
             const { code } = err;
@@ -80,7 +79,6 @@ export const refreshAuthToken = () => (dispatch, getState) => {
         }
     })
         .then(res => normalizeResponseErrors(res))
-        .then(res => res.json())
         .then(({ authToken }) => storeAuthInfo(authToken, dispatch))
         .catch(err => {
             dispatch(authError(err));
