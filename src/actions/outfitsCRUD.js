@@ -49,3 +49,65 @@ export const removeOutfit = (id, message) => ({
     message
 });
 
+// Create Get Fetch function 
+export const getOutfits = outfits => dispatch => {
+    dispatch(outfitsSuccess());
+    return fetch(`${API_BASE_URL}/users/:id/outfits`, {
+        method: 'GET',
+        headers: {
+            'content-type': 'application/json'
+        },
+        body: JSON.stringify(outfits)
+    })
+        .then(res => normalizeResponseErrors(res))
+        .then(res => res.json())
+        .then(outfits => dispatch(outfitsSuccess(outfits)))
+        .catch(err => {
+            dispatch(outfitsError(err.message || 'Could not get your outfits'))
+            throw err
+        });
+};
+
+//Get Oufit by Id
+export const getOutfitById = outfit => dispatch => {
+    dispatch(outfitSuccess());
+    return fetch(`${API_BASE_URL}/users/:id/outfits/:outfitId`, {
+        method: 'GET',
+        headers: {
+            'content-type': 'application/json'
+        },
+        body: JSON.stringify(outfit)
+    })
+        .then(res => normalizeResponseErrors(res))
+        .then(outfit => dispatch(outfitSuccess(outfit)))
+        .catch(err => {
+            dispatch(outfitsError(err.message || 'Could not retrieve your outfit'))
+            throw err
+        });
+};
+
+// Create Fetch function create
+export const createOutfit = outfit => dispatch => {
+    dispatch(addOutfit());
+    return fetch(`${API_BASE_URL}/users/:id/outfits`, {
+        method: 'POST',
+        headers: {
+            'content-type': 'application/json'
+        },
+        body: JSON.stringify()
+    })
+        .then(res => normalizeResponseErrors(res))
+        .then(outfit => addOutfit(outfit))
+        .catch(err => {
+            dispatch(outfitsError(err.message || 'Could not create outfit'))
+            throw err
+        });
+};
+
+// Create Fetch function to update outfit
+// export const updateOutfit =  => dispatch {
+//     dispatch
+// }
+
+
+// Create Fetch function to delete outfit
