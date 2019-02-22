@@ -34,7 +34,6 @@ export const registerUser = user => dispatch => {
         body: JSON.stringify(user)
     })
         .then(res => normalizeResponseErrors(res))
-        .then(res => res.json())
         .then(user => dispatch(usersSuccess(user)))
         .catch(err => {
             dispatch(usersError(err.message || 'Error submitting Signup Form.'))
@@ -52,7 +51,6 @@ export const fetchUserById = (id) => (dispatch, getState) => {
         }
     })
         .then(res => normalizeResponseErrors(res))
-        .then(res => res.json())
         .then((user) => dispatch(usersSuccess(user)))
         .catch(err => {
             dispatch(usersError(err.message || 'Error fetching user.'))
@@ -72,7 +70,6 @@ export const updateUser = (id, values) => (dispatch, getState) => {
         body: JSON.stringify(values)
     })
         .then(res => normalizeResponseErrors(res))
-        .then(res => res.json())
         .then(user => dispatch(usersSuccess(user)))
         .catch(err => {
             dispatch(userError(err.message || 'Error updating user.'))
