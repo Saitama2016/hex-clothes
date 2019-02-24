@@ -52,7 +52,7 @@ export const removeOutfit = (id, message) => ({
 // Create Get Fetch function 
 export const getOutfits = outfits => dispatch => {
     dispatch(outfitsSuccess());
-    return fetch(`${API_BASE_URL}/users/:id/outfits`, {
+    return fetch(`${API_BASE_URL}/outfits`, {
         method: 'GET',
         headers: {
             'content-type': 'application/json'
@@ -71,7 +71,7 @@ export const getOutfits = outfits => dispatch => {
 //Get Oufit by Id
 export const getOutfitById = outfit => dispatch => {
     dispatch(outfitSuccess());
-    return fetch(`${API_BASE_URL}/users/:id/outfits/:outfitId`, {
+    return fetch(`${API_BASE_URL}/outfits/:id`, {
         method: 'GET',
         headers: {
             'content-type': 'application/json'
@@ -89,7 +89,7 @@ export const getOutfitById = outfit => dispatch => {
 // Create Fetch function create
 export const createOutfit = outfit => dispatch => {
     dispatch(addOutfit());
-    return fetch(`${API_BASE_URL}/users/:id/outfits`, {
+    return fetch(`${API_BASE_URL}/outfits`, {
         method: 'POST',
         headers: {
             'content-type': 'application/json'
