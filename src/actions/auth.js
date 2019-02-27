@@ -31,6 +31,8 @@ export const authError = error => ({
     error
 });
 
+let SubmissionError;
+
 const storeAuthInfo = (authToken, dispatch) => {
     const decodedToken = jwtDecode(authToken);
     dispatch(setAuthToken(authToken));
