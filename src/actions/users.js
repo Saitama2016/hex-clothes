@@ -72,7 +72,7 @@ export const updateUser = (id, values) => (dispatch, getState) => {
         .then(res => normalizeResponseErrors(res))
         .then(user => dispatch(usersSuccess(user)))
         .catch(err => {
-            dispatch(userError(err.message || 'Error updating user.'))
+            dispatch(usersError(err.message || 'Error updating user.'))
             throw err
         });
 };
