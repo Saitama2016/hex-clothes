@@ -10,9 +10,36 @@ import { About } from './landingPage/about';
 import Login from './session/loginForm';
 import signUp from './session/registerForm';
 import Wardrobe from './wardrobe/wardrobe';
+import { refreshAuthToken } from './actions/auth';
 
 
 class App extends Component {
+
+  componentDidUpdate(prevProps) {
+    if (!prevProps.loggedIn && this.props.loggedIn) {
+      this.startPeriodicRefresh();
+    } else if (prevProps.loggedIn && !this.props.loggedIn) {
+      this.stopPeriodicRefresh();
+    }
+  }
+
+  componentWillMount() {
+    this.stopPeriodicRefresh();
+  }
+
+  startPeriodicRefresh() {
+    this.refreshInterval = setInterval(
+      () => this.props.dispatch(refreshAuthToken()),
+      60 * 60 * 1000
+    );
+  }
+
+  stopPeriodicRefresh() {
+    if (!this.refreshInterval) {
+      return
+    }
+    clearInterval(this.refreshInterval)
+  }
 
   render() {
     return (
@@ -38,12 +65,12 @@ class App extends Component {
   }
 }
 
-const mapStateToProps = (state) => {
-  return {
+const mapStateToProps = (state) => ({
+    hasAuthToken: state.authReducer.authToken !== null,
+    loggedIn: state.authReducer.current !== null,
     openForm: state.openForm,
     skintone: state.skintone,
     clothes: state.clothes
-  }
-}
+})
 
 export default connect(mapStateToProps)(App);
