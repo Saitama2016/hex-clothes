@@ -1,4 +1,11 @@
-import * as actions from '../actions/createOutfits';
+import {
+    NEW_SKINTONE,
+    CHANGE_SHIRT_TYPE,
+    CHANGE_SHIRT_COLOR,
+    CHANGE_PANTS_TYPE,
+    CHANGE_PANTS_COLOR,
+    CHANGE_SHOES_COLOR
+} from '../actions/createOutfits';
 
 const initialState = {
     skintone: "#C68642",
@@ -19,14 +26,14 @@ const initialState = {
     },
 };
 
-export default (state = initialState, action) => {
-    if (action.type === actions.NEW_SKINTONE) {
+export default function outfitReducer(state = initialState, action) {
+    if (action.type === NEW_SKINTONE) {
             return Object.assign({}, state, {
                 skintone: action.payload
             })
     }
 
-    if (action.type === actions.CHANGE_SHIRT_TYPE){
+    if (action.type === CHANGE_SHIRT_TYPE){
         const newState = Object.assign({}, state)
         newState.clothes.shirt.type = action.payload
         if (action.payload === "long-sleeve-shirt") {
@@ -71,7 +78,7 @@ export default (state = initialState, action) => {
         }
     }
 
-    if (action.type === actions.CHANGE_SHIRT_COLOR){
+    if (action.type === CHANGE_SHIRT_COLOR){
         const newState = Object.assign({}, state)
         newState.clothes.shirt.color = action.payload
         return Object.assign({}, newState, {
@@ -88,7 +95,7 @@ export default (state = initialState, action) => {
         })
     }
 
-    if (action.type === actions.CHANGE_PANTS_TYPE){
+    if (action.type === CHANGE_PANTS_TYPE){
         const newState = Object.assign({}, state)
         newState.clothes.pants.type = action.payload
         return Object.assign({}, newState, {
@@ -103,7 +110,7 @@ export default (state = initialState, action) => {
         })
     }
 
-    if (action.type === actions.CHANGE_PANTS_COLOR){
+    if (action.type === CHANGE_PANTS_COLOR){
         const newState = Object.assign({}, state)
         newState.clothes.pants.color = action.payload
         return Object.assign({}, newState, {
@@ -118,7 +125,7 @@ export default (state = initialState, action) => {
         })
     }
 
-    if (action.type === actions.CHANGE_SHOES_COLOR){
+    if (action.type === CHANGE_SHOES_COLOR){
         const newState = Object.assign({}, state)
         newState.clothes.shoes.color = action.payload
         return Object.assign({}, newState, {
