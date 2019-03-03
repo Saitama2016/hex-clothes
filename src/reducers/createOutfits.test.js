@@ -1,4 +1,4 @@
-import reducer from './reducer';
+import outfitReducer from './createOutfits';
 import { newSkintone, changeShirtType, changeShirtColor, changePantsType, changePantsColor, changeShoesColor } from '../actions/createOutfits';
 
 describe('Reducer', () => {
