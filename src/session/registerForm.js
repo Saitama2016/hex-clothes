@@ -12,7 +12,6 @@ const matchesPassword = matches('password')
 export class signUp extends React.Component {
 
     // Create onSubmit value to fetch username, password, and email
-    // Have function send status 422 if missing required field [username, password] or any inputs start with whitespace
     // If successful, redirect user to wardrobe page
     onSubmit(values) {
         //First return props
