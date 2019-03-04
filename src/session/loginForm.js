@@ -1,6 +1,8 @@
 import React from 'react';
 import { reduxForm, Field, focus, SubmissionError } from 'redux-form';
 import { login } from '../actions/auth';
+import { SideNav } from '../landingPage/sideNav';
+import { TopNav } from '../landingPage/topNav';
 import Input from '../input';
 import { required, nonEmpty } from '../validators';
 import './loginForm.css';
@@ -47,6 +49,14 @@ export class Login extends React.Component {
         }
 
         return (
+            <div>
+            <header>
+                <i onClick={() => document.getElementById("mySidenav").style.width = "500px"} className="fas fa-bars"></i>
+                <h1 className="App-logo">HexClothes</h1>
+                <h2 className="App-title">Make outfits that complement you!</h2>
+                <TopNav />
+                <SideNav />
+            </header>
             <fieldset className='loginFormContainer'>
                 <legend><h3>Login</h3></legend>
                 <form id='login'
@@ -90,6 +100,7 @@ export class Login extends React.Component {
                     </ul>
                 </form>
             </fieldset>
+            </div>
         )
     }
 }

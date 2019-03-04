@@ -1,8 +1,17 @@
 import React from 'react';
+import { SideNav } from '../landingPage/sideNav';
+import { TopNav } from '../landingPage/topNav';
 
 export function About() {
     return (
         <div>
+            <header>
+              <i onClick={() => document.getElementById("mySidenav").style.width = "500px"} className="fas fa-bars"></i>
+              <h1 className="App-logo">HexClothes</h1>
+              <h2 className="App-title">Make outfits that complement you!</h2>
+              <TopNav />
+              <SideNav />
+            </header>
             <h3 className="App-intro">How to use HexClothes!</h3>
             <section>
                 <div className="step">
