@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { TopNav } from './landingPage/topNav';
-import { SideNav } from './landingPage/sideNav';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 import './App.css';
@@ -45,13 +43,13 @@ class App extends Component {
     return (
       <Router>
       <div className="App">
-        <header className="App-header">
+        {/* <header className="App-header">
           <i onClick={() => document.getElementById("mySidenav").style.width = "500px"} className="fas fa-bars"></i>
           <h1 className="App-logo">HexClothes</h1>
           <h2 className="App-title">Make outfits that complement you!</h2>
           <SideNav />
           <TopNav />
-        </header>
+        </header> */}
         <main>
           <Route exact path="/" component={About}></Route>
           <Route path="/about" component={About}></Route>
@@ -65,12 +63,14 @@ class App extends Component {
   }
 }
 
-const mapStateToProps = (state) => ({
+const mapStateToProps = (state) => {
+  return {
     hasAuthToken: state.authReducer.authToken !== null,
     loggedIn: state.authReducer.current !== null,
     openForm: state.openForm,
     skintone: state.skintone,
     clothes: state.clothes
-})
+  }
+}
 
 export default connect(mapStateToProps)(App);
