@@ -7,7 +7,7 @@ import Input from '../input';
 import { required, nonEmpty } from '../validators';
 import './loginForm.css';
 
-export class Login extends React.Component {
+class Login extends React.Component {
     
     onSubmit(values) {
         return this.props
