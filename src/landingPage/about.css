@@ -1,0 +1,32 @@
+.aboutHeader {
+    animation: fadeInDownBig 2s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+}
+
+.skintoneDesc, .clothingDesc, .colorDesc, .App-intro {
+    animation: slideIn 2s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+}
+
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translate3d(-20rem, 0, 500rem);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate3d(0 , 0 , 0)
+    }
+}
+
+@keyframes fadeInDownBig {
+    from {
+      opacity: 0;
+      transform: translate3d(0, -2000px, 0);
+    }
+  
+    to {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+    }
+}  
