@@ -1,7 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 
-export function TopNav() {
+export function TopNav () {
     return (
         <nav className="topNav">
             <ul>

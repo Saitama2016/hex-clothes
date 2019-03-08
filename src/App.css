@@ -116,7 +116,7 @@ img {
     font-size: 2em;
   }
 
-  .topNav {
+  .topNav, .topNavLogOut {
     display: none;
   }
 
