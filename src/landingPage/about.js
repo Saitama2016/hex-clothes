@@ -1,6 +1,6 @@
 import React from 'react';
-import { SideNav } from '../navigation/sideNav';
-import { TopNav } from '../navigation/topNav';
+import SideNav from '../navigation/sideNav';
+import TopNav from '../navigation/topNav';
 import './about.css';
 
 export function About() {
