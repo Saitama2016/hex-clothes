@@ -6,7 +6,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import './App.css';
 import { About } from './landingPage/about';
 import Login from './session/loginForm';
-import signUp from './session/registerForm';
+import SignUp from './session/registerForm';
 import Wardrobe from './wardrobe/wardrobe';
 import { refreshAuthToken } from './actions/auth';
 
@@ -54,8 +54,8 @@ class App extends Component {
           <Route exact path="/" component={About}></Route>
           <Route path="/about" component={About}></Route>
           <Route path="/wardrobe" component={Wardrobe}></Route>
-          <Route path="/login" component={Login}></Route>
-          <Route path="/signup" component={signUp}></Route>
+          <Route path="/login" render={() => <Login />}></Route>
+          <Route path="/signup" render={() => <SignUp />}></Route>
         </main>
       </div>
       </Router>
@@ -65,8 +65,8 @@ class App extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    hasAuthToken: state.authReducer.authToken !== null,
-    loggedIn: state.authReducer.current !== null,
+    // hasAuthToken: state.authReducer.authToken !== null,
+    // loggedIn: state.authReducer.current !== null,
     openForm: state.openForm,
     skintone: state.skintone,
     clothes: state.clothes

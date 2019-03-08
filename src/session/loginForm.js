@@ -1,8 +1,8 @@
 import React from 'react';
 import { reduxForm, Field, focus, SubmissionError } from 'redux-form';
 import { login } from '../actions/auth';
-import { SideNav } from '../landingPage/sideNav';
-import { TopNav } from '../landingPage/topNav';
+import { SideNav } from '../navigation/sideNav';
+import { TopNav } from '../navigation/topNav';
 import Input from '../input';
 import { required, nonEmpty } from '../validators';
 import './loginForm.css';
