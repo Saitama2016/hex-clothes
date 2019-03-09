@@ -43,13 +43,6 @@ class App extends Component {
     return (
       <Router>
       <div className="App">
-        {/* <header className="App-header">
-          <i onClick={() => document.getElementById("mySidenav").style.width = "500px"} className="fas fa-bars"></i>
-          <h1 className="App-logo">HexClothes</h1>
-          <h2 className="App-title">Make outfits that complement you!</h2>
-          <SideNav />
-          <TopNav />
-        </header> */}
         <main>
           <Route exact path="/" component={About}></Route>
           <Route path="/about" component={About}></Route>
