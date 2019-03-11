@@ -11,8 +11,8 @@ export function About() {
               <h1 className="App-logo">HexClothes</h1>
               <h2 className="App-title">Make outfits that complement you!</h2>
               <TopNav />
-              <SideNav />
             </header>
+            <SideNav />
             <h3 className="App-intro">How to use HexClothes!</h3>
             <section>
                 <div className="step skintoneDesc">

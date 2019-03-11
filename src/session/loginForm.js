@@ -55,8 +55,8 @@ class Login extends React.Component {
                 <h1 className="App-logo">HexClothes</h1>
                 <h2 className="App-title">Make outfits that complement you!</h2>
                 <TopNav />
-                <SideNav />
             </header>
+            <SideNav />
             <fieldset className='loginFormContainer'>
                 <legend><h3>Login</h3></legend>
                 <form id='login'

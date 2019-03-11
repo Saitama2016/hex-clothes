@@ -60,8 +60,8 @@ class SignUp extends React.Component {
             <h1 className="App-logo">HexClothes</h1>
             <h2 className="App-title">Make outfits that complement you!</h2>
             <TopNav />
-            <SideNav />
             </header>
+            <SideNav />
             <fieldset className='signUpFormContainer'>
                 <legend><h3>Sign Up</h3></legend>
                 <form id='signUpForm'
