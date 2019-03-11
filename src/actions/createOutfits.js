@@ -5,31 +5,31 @@ export const newSkintone = (skintone) => ({
 });
 
 export const CHANGE_SHIRT_COLOR = 'CHANGE_SHIRT_COLOR';
-export const changeShirtColor = (clothes) => ({
+export const changeShirtColor = (shirtColor) => ({
     type: CHANGE_SHIRT_COLOR,
-    payload: clothes
+    payload: shirtColor
 });
 
 export const CHANGE_SHIRT_TYPE = 'CHANGE_SHIRT_TYPE';
-export const changeShirtType = (clothes) => ({
+export const changeShirtType = (shirtType) => ({
     type: CHANGE_SHIRT_TYPE,
-    payload: clothes
+    payload: shirtType
 });
 
 export const CHANGE_PANTS_COLOR = 'CHANGE_PANTS_COLOR';
-export const changePantsColor = (clothes) => ({
+export const changePantsColor = (pantsColor) => ({
     type: CHANGE_PANTS_COLOR,
-    payload: clothes
+    payload: pantsColor
 });
 
 export const CHANGE_PANTS_TYPE = 'CHANGE_PANTS_TYPE';
-export const changePantsType = (clothes) => ({
+export const changePantsType = (pantsType) => ({
     type: CHANGE_PANTS_TYPE,
-    payload: clothes
+    payload: pantsType
 });
 
 export const CHANGE_SHOES_COLOR = 'CHANGE_SHOES_COLOR';
-export const changeShoesColor = (clothes) => ({
+export const changeShoesColor = (shoesColor) => ({
     type: CHANGE_SHOES_COLOR,
-    payload: clothes
+    payload: shoesColor
 });

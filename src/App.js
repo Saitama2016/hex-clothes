@@ -62,7 +62,13 @@ const mapStateToProps = (state) => {
     // loggedIn: state.authReducer.current !== null,
     openForm: state.openForm,
     skintone: state.skintone,
-    clothes: state.clothes
+    shirtColor: state.shirtColor,
+    shirtType: state.shirtType,
+    shortSleeveVisibility: state.shortSleeveVisibility,
+    longSleeveVisibility: state.longSleeveVisibility,
+    pantsColor: state.pantsColor,
+    pantsType: state.pantsType,
+    shoesColor: state.shoesColor
   }
 }
 

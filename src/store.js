@@ -1,4 +1,4 @@
-import { createStore, combineReducers, applyMiddleware } from 'redux';
+import { createStore, combineReducers, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
 import { reducer as formReducer } from 'redux-form';
 import authReducer from './reducers/authReducer';
@@ -7,14 +7,16 @@ import outfitReducer from './reducers/createOutfits';
 import { loadAuthToken } from './localStorage';
 import { setAuthToken, refreshAuthToken } from './actions/auth';
 
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+
 const store = createStore(
     combineReducers({
         form: formReducer,
-        authReducer: authReducer,
-        usersReducer: usersReducer,
-        outfitReducer: outfitReducer
+        authReducer,
+        usersReducer,
+        outfit: outfitReducer
     }), 
-    applyMiddleware(thunk)
+    composeEnhancers(applyMiddleware(thunk))
 );
 
 const authToken = loadAuthToken();

@@ -9,134 +9,110 @@ import {
 
 const initialState = {
     skintone: "#C68642",
-    clothes: {
-        shirt: {
-            color: "#FFF",
-            type: "long-sleeve-shirt",
-            longSleeveVisibility: "visible",
-            shortSleeveVisibility: "hidden"
-        },
-        pants: {
-            color: "#1560BD",
-            type: "jeans"
-        },
-        shoes: {
-            color: "#000",
-        }
-    },
+    shirtColor: "#FFF",
+    shirtType: "long-sleeve-shirt",
+    longSleeveVisibility: "visible",
+    shortSleeveVisibility: "hidden",
+    pantsColor: "#1560BD",
+    pantsType: "jeans",
+    shoesColor: "#000"
 };
 
 export default function outfitReducer(state = initialState, action) {
-        console.log(state.clothes.shirt.color);
     if (action.type === NEW_SKINTONE) {
             return Object.assign({}, state, {
                 skintone: action.payload
             })
     }
-
     if (action.type === CHANGE_SHIRT_TYPE){
         const newState = Object.assign({}, state)
-        newState.clothes.shirt.type = action.payload
+        newState.shirtType = action.payload
         if (action.payload === "long-sleeve-shirt") {
             return Object.assign({}, newState, {
-                clothes: {
-                    shirt: {
-                        color: newState.clothes.shirt.color,
-                        type: action.payload,
-                        shortSleeveVisibility: "hidden",
-                        longSleeveVisibility: "visible"
-                    },
-                    pants: newState.clothes.pants,
-                    shoes: newState.clothes.shoes
-                }
+                shirtColor: newState.shirtColor,
+                type: action.payload,
+                shortSleeveVisibility: "hidden",
+                longSleeveVisibility: "visible",
+                pantsColor: newState.pantsColor,
+                pantsType: newState.pantsType,
+                shoesColor: newState.shoesColor
             })
         } else if (action.payload === "t-shirt") {
             return Object.assign({}, newState, {
-                clothes: {
-                    shirt: {
-                        color: newState.clothes.shirt.color,
-                        type: action.payload,
-                        shortSleeveVisibility: "visible",
-                        longSleeveVisibility: "hidden"
-                    },
-                    pants: newState.clothes.pants,
-                    shoes: newState.clothes.shoes
-                }
+                shirtColor: newState.shirtColor,
+                type: action.payload,
+                shortSleeveVisibility: "visible",
+                longSleeveVisibility: "hidden",
+                pantsColor: newState.pantsColor,
+                pantsType: newState.pantsType,
+                shoesColor: newState.shoesColor
             })
         } else if (action.payload === "tank-top") {
             return Object.assign({}, newState, {
-                clothes: {
-                    shirt: {
-                        color: newState.clothes.shirt.color,
-                        type: action.payload,
-                        shortSleeveVisibility: "hidden",
-                        longSleeveVisibility: "hidden"
-                    },
-                    pants: newState.clothes.pants,
-                    shoes: newState.clothes.shoes
-                }
+                shirtColor: newState.shirtColor,
+                type: action.payload,
+                shortSleeveVisibility: "hidden",
+                longSleeveVisibility: "hidden",
+                pantsColor: newState.pantsColor,
+                pantsType: newState.pantsType,
+                shoesColor: newState.shoesColor
             })
         }
     }
 
     if (action.type === CHANGE_SHIRT_COLOR){
         const newState = Object.assign({}, state)
-        newState.clothes.shirt.color = action.payload
+        newState.shirtColor = action.payload
         return Object.assign({}, newState, {
-            clothes: {
-                shirt: {
-                    color: newState.clothes.shirt.color,
-                    type: newState.clothes.shirt.type,
-                    shortSleeveVisibility: newState.clothes.shirt.shortSleeveVisibility,
-                    longSleeveVisibility: newState.clothes.shirt.longSleeveVisibility
-                },
-                pants: newState.clothes.pants,
-                shoes: newState.clothes.shoes
-            }
+            shirtColor: action.payload,
+            shirtType: newState.shirtType,
+            shortSleeveVisibility: newState.shortSleeveVisibility,
+            longSleeveVisibility: newState.longSleeveVisibility,
+            pantsColor: newState.pantsColor,
+            pantsType: newState.pantsType,
+            shoesColor: newState.shoesColor
         })
     }
 
     if (action.type === CHANGE_PANTS_TYPE){
         const newState = Object.assign({}, state)
-        newState.clothes.pants.type = action.payload
+        newState.pantsType = action.payload
         return Object.assign({}, newState, {
-            clothes: {
-                shirt: newState.clothes.shirt,
-                pants: {
-                    color: newState.clothes.pants.type,
-                    type: action.payload
-                },
-                shoes: newState.clothes.shoes
-            }
+            shirtColor: newState.shirtColor,
+            shirtType: newState.shirtType,
+            shortSleeveVisibility: newState.shortSleeveVisibility,
+            longSleeveVisibility: newState.longSleeveVisibility,
+            pantsColor: newState.pantsColor,
+            pantsType: action.payload,
+            shoesColor: newState.shoesColor
         })
     }
 
     if (action.type === CHANGE_PANTS_COLOR){
         const newState = Object.assign({}, state)
-        newState.clothes.pants.color = action.payload
+        newState.pantsColor = action.payload
         return Object.assign({}, newState, {
-            clothes: {
-                shirt: newState.clothes.shirt,
-                pants: {
-                    color: action.payload,
-                    type: newState.clothes.pants.type
-                },
-                shoes: newState.clothes.shoes
-            }
+            shirtColor: newState.shirtColor,
+            shirtType: newState.shirtType,
+            shortSleeveVisibility: newState.shortSleeveVisibility,
+            longSleeveVisibility: newState.longSleeveVisibility,
+            pantsColor: action.payload,
+            pantsType: newState.pantsType,
+            shoesColor: newState.shoesColor
         })
     }
 
     if (action.type === CHANGE_SHOES_COLOR){
         const newState = Object.assign({}, state)
-        newState.clothes.shoes.color = action.payload
+        newState.shoesColor = action.payload
         return Object.assign({}, newState, {
-            clothes: {
-                shirt: newState.clothes.shirt,
-                pants: newState.clothes.pants,
-                shoes: {
-                    color: newState.clothes.shoes.color
-                }
-            }
+            shirtColor: newState.shirtColor,
+            shirtType: newState.shirtType,
+            shortSleeveVisibility: newState.shortSleeveVisibility,
+            longSleeveVisibility: newState.longSleeveVisibility,
+            pantsColor: newState.pantsColor,
+            pantsType: newState.pantsType,
+            shoesColor: action.payload
         })
     }
 
