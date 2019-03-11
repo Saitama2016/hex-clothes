@@ -12,13 +12,12 @@ import { changePantsColor } from '../../actions/createOutfits';
 //     return arr[1]
 // }
 
-const SelectPantsColor = ({ clothes, dispatch }) => {
+const SelectPantsColor = ({ pantsType, dispatch }) => {
 
     const flattenPantsColors = (groups) => {
         let arr = Object.keys(groups).map((group) => 
             Object.values(groups[group])
         )
-        let pantsType = clothes.pants.type
 
         if (pantsType === 'jeans') {
             return arr[0]
@@ -45,7 +44,7 @@ const SelectPantsColor = ({ clothes, dispatch }) => {
 }
 
 const mapStateToProps = (state) => ({
-    clothes: state.clothes
+    pantsColor: state.pantsColor,
 })
 
 export default connect(mapStateToProps)(SelectPantsColor)

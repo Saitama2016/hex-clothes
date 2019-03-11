@@ -12,29 +12,29 @@ const  Model = (props) => {
             </div>
             <div className="body" style={{backgroundColor: props.skintone}}>
               <div className="top" style={{backgroundColor: props.skintone}}></div>
-              <div className="collar" style={{backgroundColor: props.clothes.shirt.color}}></div>
+              <div className="collar" style={{backgroundColor: props.shirtColor}}></div>
               <div className="left-arm" style={{backgroundColor: props.skintone}}>
                 <div className="left-hand" style={{backgroundColor: props.skintone}}></div>
               </div>
               <div className="right-arm" style={{backgroundColor: props.skintone}}>
                 <div className="right-hand" style={{backgroundColor: props.skintone}}></div>
               </div>
-              <div className="shirt" style={{backgroundColor: props.clothes.shirt.color}}>
-                <div className="left-short-sleeve" style={{backgroundColor: props.clothes.shirt.color, visibility: props.clothes.shirt.shortSleeveVisibility}}></div>
-                <div className="left-long-sleeve" style={{backgroundColor: props.clothes.shirt.color, visibility: props.clothes.shirt.longSleeveVisibility}}></div>
-                <div className="right-long-sleeve" style={{backgroundColor: props.clothes.shirt.color, visibility: props.clothes.shirt.longSleeveVisibility}}></div>
-                <div className="right-short-sleeve" style={{backgroundColor: props.clothes.shirt.color, visibility: props.clothes.shirt.shortSleeveVisibility}}></div>
+              <div className="shirt" style={{backgroundColor: props.shirtColor}}>
+                <div className="left-short-sleeve" style={{backgroundColor: props.shirtColor, visibility: props.shortSleeveVisibility}}></div>
+                <div className="left-long-sleeve" style={{backgroundColor: props.shirtColor, visibility: props.longSleeveVisibility}}></div>
+                <div className="right-long-sleeve" style={{backgroundColor: props.shirtColor, visibility: props.longSleeveVisibility}}></div>
+                <div className="right-short-sleeve" style={{backgroundColor: props.shirtColor, visibility: props.shortSleeveVisibility}}></div>
               </div>
             </div>
-            <div className="waist" style={{backgroundColor: props.clothes.pants.color}}></div>
+            <div className="waist" style={{backgroundColor: props.pantsColor}}></div>
             <div className="legs">
-              <div className="leg left" style={{backgroundColor: props.clothes.pants.color}}>
+              <div className="leg left" style={{backgroundColor: props.pantsColor}}>
                 <div className="foot" style={{backgroundColor: props.skintone}}></div>
-                <div className="shoe" style={{backgroundColor: props.clothes.shoes.color}}></div>
+                <div className="shoe" style={{backgroundColor: props.shoesColor}}></div>
               </div>
-              <div className="leg right" style={{backgroundColor: props.clothes.pants.color}}>
+              <div className="leg right" style={{backgroundColor: props.pantsColor}}>
                 <div className="foot" style={{backgroundColor: props.skintone}}></div>
-                <div className="shoe" style={{backgroundColor: props.clothes.shoes.color}}></div>
+                <div className="shoe" style={{backgroundColor: props.shoesColor}}></div>
               </div>
             </div>
         </div>
@@ -45,7 +45,13 @@ const  Model = (props) => {
 const mapStateToProps = state => {
   return {
     skintone: state.skintone,
-    clothes: state.clothes
+    shirtColor: state.shirtColor,
+    shirtType: state.shirtType,
+    shortSleeveVisibility: state.shortSleeveVisibility,
+    longSleeveVisibility: state.longSleeveVisibility,
+    pantsColor: state.pantsColor,
+    pantsType: state.pantsType,
+    shoesColor: state.shoesColor
   }
 }
 
