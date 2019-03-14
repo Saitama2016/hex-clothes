@@ -18,7 +18,7 @@ const initialState = {
     shoesColor: "#000"
 };
 
-export default function outfitReducer(state = initialState, action) {
+export default function reducer(state = initialState, action) {
     if (action.type === NEW_SKINTONE) {
             return Object.assign({}, state, {
                 skintone: action.payload
