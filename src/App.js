@@ -40,6 +40,7 @@ class App extends Component {
   }
 
   render() {
+    console.log(state)
     return (
       <Router>
       <div className="App">
@@ -58,8 +59,8 @@ class App extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    // hasAuthToken: state.authReducer.authToken !== null,
-    // loggedIn: state.authReducer.current !== null,
+    hasAuthToken: state.authReducer.authToken !== null,
+    loggedIn: state.authReducer.current !== null,
     openForm: state.openForm,
     skintone: state.skintone,
     shirtColor: state.shirtColor,
