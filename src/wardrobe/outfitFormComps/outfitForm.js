@@ -25,14 +25,14 @@ const OutFitForm = () => {
 }
 
 const mapStateToProps = (state) => ({
-    skintone: state.skintone,
-    shirtColor: state.shirtColor,
-    shirtType: state.shirtType,
-    shortSleeveVisibility: state.shortSleeveVisibility,
-    longSleeveVisibility: state.longSleeveVisibility,
-    pantsColor: state.pantsColor,
-    pantsType: state.pantsType,
-    shoesColor: state.shoesColor
+    skintone: state.outfitReducer.skintone,
+    shirtColor: state.outfitReducer.shirtColor,
+    shirtType: state.outfitReducer.shirtType,
+    shortSleeveVisibility: state.outfitReducer.shortSleeveVisibility,
+    longSleeveVisibility: state.outfitReducer.longSleeveVisibility,
+    pantsColor: state.outfitReducer.pantsColor,
+    pantsType: state.outfitReducer.pantsType,
+    shoesColor: state.outfitReducer.shoesColor
 })
 
 export default connect(mapStateToProps)(OutFitForm);

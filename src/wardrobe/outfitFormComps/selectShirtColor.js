@@ -45,7 +45,7 @@ const SelectShirtColor = ({skintone, dispatch}) => {
 }
 
 const mapStateToProps = state => ({
-    skintone: state.skintone,
+    skintone: state.outfitReducer.skintone,
 })
 
 export default connect(mapStateToProps)(SelectShirtColor);

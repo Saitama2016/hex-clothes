@@ -16,4 +16,8 @@ const SelectPantsType = ({ dispatch }) => {
     )
 }
 
-export default connect()(SelectPantsType);
+const mapStateToProps = state => ({
+    pantsType: state.outfitReducer.pantsType
+})
+
+export default connect(mapStateToProps)(SelectPantsType);

@@ -4,7 +4,6 @@ import {connect} from 'react-redux';
 
 const  Model = (props) => {
   // Give credit to the author of the User I took inspiration from
-      console.log(props.skintone);
         return (
         <div className="user" >
         <div className="person" id="person">
@@ -45,14 +44,14 @@ const  Model = (props) => {
 
 const mapStateToProps = state => {
   return {
-    skintone: state.skintone,
-    shirtColor: state.shirtColor,
-    shirtType: state.shirtType,
-    shortSleeveVisibility: state.shortSleeveVisibility,
-    longSleeveVisibility: state.longSleeveVisibility,
-    pantsColor: state.pantsColor,
-    pantsType: state.pantsType,
-    shoesColor: state.shoesColor
+    skintone: state.outfitReducer.skintone,
+    shirtColor: state.outfitReducer.shirtColor,
+    shirtType: state.outfitReducer.shirtType,
+    shortSleeveVisibility: state.outfitReducer.shortSleeveVisibility,
+    longSleeveVisibility: state.outfitReducer.longSleeveVisibility,
+    pantsColor: state.outfitReducer.pantsColor,
+    pantsType: state.outfitReducer.pantsType,
+    shoesColor: state.outfitReducer.shoesColor
   }
 }
 

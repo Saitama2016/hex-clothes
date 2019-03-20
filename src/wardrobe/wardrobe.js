@@ -9,7 +9,6 @@ import SideNavLogOut from '../navigation/sideNavLogOut';
 
 class Wardrobe extends React.Component {
     render() {
-        console.log(this.props);
         return (
             <div>
                 <header className="wardrobeHeader">
@@ -36,16 +35,15 @@ class Wardrobe extends React.Component {
 }
 
 const mapStateToProps = state => {
-    // console.log(state);
     return {
-        skintone: state.skintone,
-        shirtColor: state.shirtColor,
-        shirtType: state.shirtType,
-        shortSleeveVisibility: state.shortSleeveVisibility,
-        longSleeveVisibility: state.longSleeveVisibility,
-        pantsColor: state.pantsColor,
-        pantsType: state.pantsType,
-        shoesColor: state.shoesColor
+        skintone: state.outfitReducer.skintone,
+        shirtColor: state.outfitReducer.shirtColor,
+        shirtType: state.outfitReducer.shirtType,
+        shortSleeveVisibility: state.outfitReducer.shortSleeveVisibility,
+        longSleeveVisibility: state.outfitReducer.longSleeveVisibility,
+        pantsColor: state.outfitReducer.pantsColor,
+        pantsType: state.outfitReducer.pantsType,
+        shoesColor: state.outfitReducer.shoesColor
     }
 }
 
