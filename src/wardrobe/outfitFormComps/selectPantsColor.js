@@ -44,7 +44,8 @@ const SelectPantsColor = ({ pantsType, dispatch }) => {
 }
 
 const mapStateToProps = (state) => ({
-    pantsColor: state.pantsColor,
+    pantsType: state.outfitReducer.pantsType,
+    pantsColor: state.outfitReducer.pantsColor,
 })
 
 export default connect(mapStateToProps)(SelectPantsColor)
