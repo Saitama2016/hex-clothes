@@ -58,8 +58,8 @@ class App extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    // hasAuthToken: state.authReducer.authToken !== null,
-    // loggedIn: state.authReducer.current !== null,
+    hasAuthToken: state.authReducer.authToken !== null,
+    loggedIn: state.authReducer.current !== null,
     skintone: state.outfitReducer.skintone,
     shirtColor: state.outfitReducer.shirtColor,
     shirtType: state.outfitReducer.shirtType,
