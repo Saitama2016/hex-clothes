@@ -1,4 +1,5 @@
 import React from 'react';
+import { Redirect } from 'react-router-dom';
 import { reduxForm, Field, focus, SubmissionError } from 'redux-form';
 import { registerUser } from '../actions/users';
 import { login } from '../actions/auth';
@@ -21,6 +22,7 @@ class SignUp extends React.Component {
         //dispatch registerUser to get username, password, and email
         .dispatch(registerUser(values))
         .then(() => this.props.dispatch(login(values.username, values.password)))
+        .then(() => <Redirect to='/wardrobe' />)
         //Catch errors
         .catch(err => {
             const {reason, message} = err;

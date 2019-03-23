@@ -9,7 +9,7 @@ const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 const store = createStore(
     combineReducers({
-        formReducer,
+        form: formReducer,
         authReducer,
         usersReducer,
         outfitReducer

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Redirect } from 'react-router-dom';
 import { reduxForm, Field, focus, SubmissionError } from 'redux-form';
 import { login } from '../actions/auth';
 import { SideNav } from '../navigation/sideNav';
@@ -12,6 +13,7 @@ class Login extends React.Component {
     onSubmit(values) {
         return this.props
             .dispatch(login(values.loginUsername, values.loginPassword))
+            // .then(() => <Redirect to="/wardrobe" />)
             .catch(err => {
                 let { code, reason, message } = err;
                 message = 
@@ -32,11 +34,12 @@ class Login extends React.Component {
     render() {
         let successMessage;
         if (this.props.submitSucceeded) {
-            successMessage = (
-                <li className='formRow message messageSuccess'>
-                    Form successfully submmitted!                
-                </li>
-            );
+            // successMessage = (
+            //     <li className='formRow message messageSuccess'>
+            //         Form successfully submmitted!                
+            //     </li>
+            // );
+            return <Redirect to="/wardrobe" />
         }
 
         let errorMessage;

@@ -46,7 +46,8 @@ export const login = (username, password) => dispatch => {
         fetch(`${API_BASE_URL}/auth/login`, {
             method: 'POST',
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                // Authorization: `Bearer ${authToken}`
             },
             body: JSON.stringify({
                 username,
@@ -73,7 +74,7 @@ export const login = (username, password) => dispatch => {
 
 export const refreshAuthToken = () => (dispatch, getState) => {
     dispatch(authRequest());
-    const authToken = getState().auth.authToken;
+    const authToken = getState().authReducer.authToken;
     return fetch(`${API_BASE_URL}/auth/refresh`, {
         method: 'POST',
         headers: {
