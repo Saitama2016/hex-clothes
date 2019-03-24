@@ -32,13 +32,7 @@ class Login extends React.Component {
     }
 
     render() {
-        let successMessage;
         if (this.props.submitSucceeded) {
-            // successMessage = (
-            //     <li className='formRow message messageSuccess'>
-            //         Form successfully submmitted!                
-            //     </li>
-            // );
             return <Redirect to="/wardrobe" />
         }
 
