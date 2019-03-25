@@ -5,7 +5,6 @@ function TopNavLogOut() {
     return (
         <nav className="topNavLogOut">
             <ul>
-                <li><a href="about">About</a></li>
                 <li><a href="/">LogOut</a></li>
             </ul>
       </nav>
