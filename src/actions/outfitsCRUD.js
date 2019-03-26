@@ -42,6 +42,12 @@ export const addOutfit = outfit => ({
     outfit
 });
 
+export const EDIT_OUTFIT = 'EDIT_OUTFIT';
+export const editOutfit = outfit => ({
+    type: EDIT_OUTFIT,
+    outfit
+});
+
 export const REMOVE_OUTFIT = 'REMOVE_OUTFIT';
 export const removeOutfit = (id, message) => ({
     type: REMOVE_OUTFIT,
@@ -105,9 +111,25 @@ export const createOutfit = outfit => dispatch => {
 };
 
 // Create Fetch function to update outfit
-// export const updateOutfit =  => dispatch {
-//     dispatch
-// }
+export const updateOutfit = (id, values) => (dispatch, getState) => {
+    dispatch(outfitsRequest());
+    const authToken = getState().authReducer.authToken;
+    return fetch(`${API_BASE_URL}/outfits/${id}`, {
+        method: 'PUT',
+        headers: {
+            'content-type': 'application/json',
+            Authorization: `Bearer ${authToken}`
+        },
+        body: JSON.stringify(values)
+    })
+        .then(res => normalizeResponseErrors(res))
+        .then(res => res.json())
+        .then(() => dispatch(updateSuccess()))
+        .catch(err => {
+            dispatch(outfitsError(err.message || 'Error updating outfit.'))
+            throw err
+        });
+}
 
 
 // Create Fetch function to delete outfit
