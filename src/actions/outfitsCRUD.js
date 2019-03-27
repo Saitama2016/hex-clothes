@@ -131,5 +131,21 @@ export const updateOutfit = (id, values) => (dispatch, getState) => {
         });
 }
 
-
 // Create Fetch function to delete outfit
+export const deleteOutfit = id => (dispatch, getState) => {
+    dispatch(outfitsRequest());
+    const authToken = getState().authReducer.authToken;
+    return fetch(`${API_BASE_URL}/outfits/${id}`, {
+        method: 'DELETE',
+        headers: {
+            Authorization: `Bearer ${authToken}`
+        }
+    })
+        .then(res => normalizeResponseErrors(res))
+        .then(res => res.json())
+        .then((res) => dispatch(removeOutfit(res.message)))
+        .catch(err => {
+            dispatch(outfitsError(err.message || 'Error deleting outfit.'))
+            throw err
+        });
+};
