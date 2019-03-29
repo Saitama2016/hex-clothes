@@ -83,7 +83,6 @@ class Login extends React.Component {
                         <li className='formRow hidden' id='loginErrorRow' hidden>
                             <p id='loginError'></p>
                         </li>
-                        {successMessage}
                         {errorMessage}
                         <li className='formRow buttonRow'>
                             <button
