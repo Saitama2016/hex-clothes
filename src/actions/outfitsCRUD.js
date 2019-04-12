@@ -93,22 +93,28 @@ export const getOutfitById = outfit => dispatch => {
 };
 
 // Create Fetch function create
-export const createOutfit = outfit => dispatch => {
+export const createOutfit = (outfit) => (dispatch, getState) => {
+    const outfitObject = {
+        outfit
+    }
     dispatch(addOutfit());
+    const authToken = getState().authToken.authToken;
     return fetch(`${API_BASE_URL}/outfits`, {
         method: 'POST',
         headers: {
-            'content-type': 'application/json'
+            'content-type': 'application/json',
+            Authorization: `Bearer ${authToken}`
         },
-        body: JSON.stringify()
+        body: JSON.stringify(outfitObject)
     })
         .then(res => normalizeResponseErrors(res))
-        .then(outfit => addOutfit(outfit))
+        .then(res => res.json())
+        .then(outfit => dispatch(outfitSuccess(outfit)))
         .catch(err => {
             dispatch(outfitsError(err.message || 'Could not create outfit'))
             throw err
         });
-};
+}
 
 // Create Fetch function to update outfit
 export const updateOutfit = (id, values) => (dispatch, getState) => {
